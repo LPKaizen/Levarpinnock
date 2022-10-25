@@ -61,7 +61,7 @@ html {
 
 .footer-container {
     padding: 0;
-    height: 650px;
+    height: 750px;
     width: 100vw;
     background: coral;
     text-align: center;
@@ -109,7 +109,8 @@ img {
    position: absolute;
    text-align: center;
    border: white solid 1px;
-   overflow: scroll;
+   overflow-y: hidden;
+   overflow-x: hidden;
 }
 
 .TVbigtext {
@@ -315,6 +316,10 @@ thead {
         box-shadow: 0px 0px 6vh coral;
     }
 
+    #chhome {
+        overflow: scroll;
+    }
+
     .TVtext {
         font-size: 12pt;
     }
@@ -377,7 +382,7 @@ thead {
     }
 
     .footer-container {
-        height: 275px;
+        height: 375px;
     }
 
     #back {
