@@ -1,0 +1,410 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar {
+    text-align: center;
+    Position: relative;
+    padding-top: 1.5em;
+    height: 5em;
+    min-width: 100%;
+    width: auto;
+    background: rgba(0,0,100, 0.2);
+    border-bottom: 1px solid coral;
+    box-shadow: 0px 0px 12vh coral;
+}
+
+.btn {
+    color: #fff;
+    margin: 2.5em 1em;
+    padding: 10px 18px;
+    text-decoration: none;
+    border: 1px solid coral;
+    font-weight: 500;
+    font-size: 38px;
+    border-radius: 35px;
+}
+
+.btn:hover {
+    background: coral;
+    color: black;
+    transition: 200ms;
+}
+
+
+.header {
+    height:100vh;
+    background: rgba(0,0,100, 0.4);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.video-background{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+}
+
+.footer-container {
+    padding: 0;
+    height: 650px;
+    width: 100vw;
+    background: coral;
+    text-align: center;
+}
+
+.footericons {
+    padding-top: 14em;
+    Padding-bottom: 5em;
+}
+
+img {
+    background: black;
+    color: coral;
+}
+
+.icon {
+    background-color: coral;
+    height: 150px;
+    width: 150px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+
+.footertext {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.TV {
+    width: 80vw;
+    height:70vh;
+    margin-top: 20vh;
+    position: absolute;
+    text-align: center;
+}
+
+/**beginning of home channel code**/
+#chhome {
+   display: block;
+   visibility: visible;
+   width: inherit;
+   height: inherit;
+   position: absolute;
+   text-align: center;
+   border: white solid 1px;
+   overflow: scroll;
+}
+
+.TVbigtext {
+    font-size: 8em; 
+    color: coral;
+}
+/**beginning of channel one code**/
+
+#ch1 {
+    visibility: hidden;
+    width: inherit;
+    height:inherit;
+    text-align: center;
+    border: white solid 1px;
+    overflow: scroll;
+}
+
+.aboutmeflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto 0;
+    padding-top: 4vh;
+}
+
+
+.selfie {
+    width: 22vw;
+    height:60vh;
+    min-width: 360px;
+    margin-right: 10vw;
+    border: coral 5px solid;
+}
+
+.mobileaboutme {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.aboutme {
+    width: 30vw;
+    height: 60vh;
+}
+
+
+.nextcircle {
+    color: #fff;
+    margin: 2.5em 1em;
+    padding: 10px 18px;
+    text-decoration: none;
+    border: 1px solid coral;
+    font-weight: 500;
+    font-size: 38px;
+    border-radius: 50%;
+    
+}
+
+.nextcircle:hover {
+    background: coral;
+    color: black;
+    transition: 200ms;
+}
+
+.TVtext {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/**beginning of channel two code**/
+#ch2 {
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    border: white solid 1px;
+    overflow: scroll;
+}
+
+/**beginning of table stuff **/
+
+tr, td ,table {
+border: 3px solid coral;
+border-collapse: collapse;
+color: white;
+}
+
+td, tr {
+    padding: 5px;
+    font-size: 1.4rem;
+}
+
+thead {
+    font-weight: bolder;
+}
+
+/**beginning of channel Three code**/
+#ch3 {
+
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    border: white solid 1px;
+    overflow: scroll;
+}
+
+.computers {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 20vw;
+    height: 50vh;
+    border: coral 5px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slides {
+    top: 0%;
+    position: relative;
+    width: 100%;
+    transition: 0.6s;
+}
+.slides:hover { 
+    top: -100%;  
+}  
+
+ .slide {
+    top: 0%;
+    position: relative;
+    width: 100%;
+ }
+
+ .picnav {
+    position: absolute;
+    bottom: 20vh;
+    margin: 0 auto;
+    display: flex;
+ }
+
+.bar{
+    width: 50px;
+    height: 10px;
+    border: black 2px solid;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+
+#back {
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+
+/**Beginning of mobile support  **/
+
+@media only screen and (max-width: 1210px){
+    
+    .TV {
+        width: 80vw;
+        height: 61vh;
+        margin-top: 33vh;
+        position: absolute;
+        text-align: center;
+        
+    }
+
+    .btn {
+        font-weight: 300;
+        font-size: 28px;
+        border-radius: 35px;
+        margin-top: 5px;
+        margin: 5px auto;
+        padding: 0;
+        width: 50vw;
+        height: max-content;
+    }
+
+    .navbar {
+        height: 11.7em;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+        box-shadow: 0px 0px 6vh coral;
+    }
+
+    .TVtext {
+        font-size: 12pt;
+    }
+    .TVbigtext {
+        font-size: 4em;
+    }
+
+    .header {
+        height: 100vh;
+    }
+
+    .footericons {
+        padding-top: 1em;
+        Padding-bottom: 18px;
+    }
+
+    .footertext {
+        font-size: 18pt;
+    }
+
+    .icon {
+        background-color: coral;
+        height: 150px;
+        width: 150px;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+
+    .aboutmeflex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto 0;
+        padding: 0;
+    }
+
+    .selfie {
+        width: 5vw;
+        height: 60vh;
+        max-width: 340px;
+        margin: 0 auto;
+        border: coral 2px solid;
+    }
+
+    .aboutme {
+        display: none;
+    }
+
+    .mobileaboutme {
+        display: block;
+        color: white;
+        font-size: 12pt;
+        width: 80vw;
+        height: 70vh;
+    }
+
+    .nextcircle {
+        display: none;
+    }
+
+    .footer-container {
+        height: 275px;
+    }
+
+    #back {
+        font-size: 1.5rem;
+    }
+
+    tr, td ,table {
+        border: 1px solid coral;
+        }
+        
+    td, tr {
+        font-size: 11pt;
+    }
+        
+    thead {
+        font-weight: bold;
+    }
+
+    .icon {
+        height: 80px;
+        width: 80px;
+    }
+
+    .computers {
+        width: 60vw;
+        height: 45vh;
+        border: coral 3px solid;
+    }
+}
+/** End of mobile Support **/

@@ -1,0 +1,212 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <!--Setting Title and linking CSS file-->
+        <title>Welcome</title>
+        <link href="./index.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <!--Beginning of body-->
+    <body id="header">
+        
+
+        <!--Navagation Bar-->
+        <section class="header">
+            <nav class="navbar">
+                <a class="btn" onclick="changeOne()">About Me</a>
+                <a class="btn" onclick="changeTwo()">Services</a>
+                <a class="btn" onclick="changeThree()" class="demos">Tech Demos</a>
+                <a href="#footer" class="btn" class="contactb">Contact</a>
+            </nav>
+
+            <!--Beginning of main section-->
+            <video class="video-background" autoplay loop muted plays-inline>
+                <source src="media/videos/Mountains in the fog.mp4">
+            </video>
+
+            <!--BEGINNING OF "TV"-->
+            <div class="TV">
+
+                <!--Main Channel-->
+                <div id="chhome">
+                    <a class="TVbigtext"> Hi!</a>
+                    <br>
+                    <br>
+                    <a class="TVtext">The purpose of this website is mainly to showcase my web development skills. Although the Domain is registered through wordpress,
+                         I handle all back-end functionality at home. In fact, this entire website is manually hosted on a secured Rasberry pi sitting on a desk next to the keyboard im using to type this little blurb.
+                         Needless to say I can host a website. The hosting is accomplished through django and mariaDB. The Site itself was hard coded from scratch, no Bootsrap or SaSS 
+                         here folks, just pure HTML, CSS, and good ol' JavaScript. I can also code in python too! check out my py games plus some other stuff in the tech demos section above!
+                    </a>
+                    <br><br><br><br>
+                    <a class="TVtext">
+                        If you need to build or update your website, or you need a custom built PC solution for your home or business, feel free
+                        to reach out to me using the contact information below!
+                    </a>
+                </div>
+
+                <!--Channel 1: About Me-->
+                <div id="ch1" style="display: none;">
+                    <div class="aboutmeflex">
+                        <div class="selfie">
+                            <img src="./media/images/other/head1.jpg">
+                        </div>
+                        <div class="aboutme" style ="color: white; font-size: 1.3rem;">
+                            <div id="pageone" style="display: block">
+                                <a>
+                                If you're a recruiter and you want to skip to the tldr, you can download a copy of my resume here.           
+                                </a>
+                                <br><br>
+                                <a>
+                                    I Graduated from Sheridan College in 2014 with an Advanced Diploma in Computer Systems Engineering. My first job was working as a 
+                                    Data Entry Clerk. I hated it, but loved working from home on my computer, so I stuck it out until a year later when I would start working at Becton Dictonson as an inventory control
+                                    Specialist. I worked with an SAP database, as well as an Lotus notes database to moniter and manage inventory at a pharmaceuticals storage and manucaturing faucility for one year. After
+                                    completing my 1-year contract, I worked with Premium retail services, Working directly with google to market and sell smarthome infranstructure. after 4 years of that, I ended up at Amazon, doing
+                                    the same thing, but with anything that had Alexa, or Fire OS installed on it.
+                                </a>
+                            </div>
+                            <div id="pagetwo" style="display: none;">
+                                <a>
+                                    Since then, I've worked on various sucessful Marketing campaigns, but still, my heart lies in computer science. and truth be told, I just love coding. So much so that I decdied that I want to
+                                    pivot my career towards a development focused role. I have many years of experience with web developmetn over the years, and even some back and languages like Java, Turing, C++, and visual basic.
+                                    I can tell you about all of my experience, but seeing is beliving. So feel free to check out my tech demos page and try some of the games and apps I've been practicing with.
+                                </a>
+                                <br><br><br>
+                                <a>
+                                    that's basically it, I only wanted to type abit more so that i could make this section feel abit more filled out. didt i succeed? no? oh well. anyways, enjoy your stay at my website!
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mobileaboutme">
+                            <a>
+                                If you're a recruiter and you want to skip to the tldr, you can download a copy of my resume here. Otherwise, keep reading!
+                            </a>
+                            <br><br>
+                            <a>
+                                I Graduated from Sheridan College in 2014 with an Advanced Diploma in Computer Systems Engineering. My first job was working as a 
+                                Data Entry Clerk. I hated it, but loved working from home on my computer, so I stuck it out until a year later when I would start working at Becton Dictonson as an inventory control
+                                Specialist. I worked with an SAP database, as well as an Lotus notes database to moniter and manage inventory at a pharmaceuticals storage and manucaturing faucility for one year. After
+                                my 1 year contract was upm, I worked with Premium retail services, Working directly with google to market and sell smarthome infranstructure. after 4 years of that, I ended up at Amazon, doing
+                                the same thing, but with anything that had Alexa, or Fire OS installed on it.
+                            </a>
+                            <br><br>
+                            <a>
+                                Since then, I've worked on various sucessful Marketing campaigns, but still, my heart lies in computer science. and truth be told, I just love coding. So much so that I decdied that I want to
+                                pivot my career towards a development focused role. I have many years of experience with web developmetn over the years, and even some back and languages like Java, Turing, C++, and visual basic.
+                                I can tell you about all of my experience, but seeing is beliving. So feel free to check out my tech demos page and try some of the games and apps I've been practicing with.
+                            </a>
+                        </div>
+                        <div class="nextcircle" onclick="changePage()">
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!--Channel 2: Services-->
+                <div id="ch2" style="display: none;">
+                    <table width="100%" height="100%">
+                        <thead>
+                            <td>Services</td>
+                            <td>Pricing</td>
+                            <td>Time</td>
+                            <td>Details</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Consultation</td>
+                                <td>Free</td>
+                                <td>24 Hours</td>
+                                <td>Free consultaiton on your build, printed copy available on completion</td>
+                            </tr>
+                            <tr>
+                                <td>PC Repair</td>
+                                <td>$30 - $60</td>
+                                <td>2 - 4 hours</td>
+                                <td>Includes virus removal, hardware troubleshooting/replacement, and hard drive restoration/rackup</td>
+                            </tr>
+                            <tr>
+                                <td>Home/Office PC Build/Upgrade</td>
+                                <td>$120 - $600</td>
+                                <td>8 - 40 hours</td>
+                                <td>Price includes purchasing parts, constuction, and software installation</td>                          
+                            </tr>
+                            <tr>
+                                <td>Office PC(Bulk Order)</td>
+                                <td>$30 Per Machine</td>
+                                <td>1 or more business days</td>
+                                <td>**5 PC order minimum, includes Network Setup and Software installation</td>                              
+                            </tr>
+                            <tr>
+                                <td>Gaming PC</td>
+                                <td>$60 - $120</td>
+                                <td>4 - 8 Hours</td>
+                                <td>Includes installation of Software and gaming accessories</td>    
+                            </tr>
+                            <tr>
+                                <td>Website Development</td>
+                                <td>Basic: $15 Standard: $80 Premium: $150</td>
+                                <td>3 - 7 Business Days</td>   
+                                <td>Basic: 1 page + 3 revisions | Standard: 3 pages + 7 revisions | Premium: 5 pages + unlimited revisions |
+                                    All options include design customization, responsive design, content upload, and source code
+                                </td>                            
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--Channel 3: Tech Demos-->
+                <div id="ch3" style="display: none;">
+                    <a class="TVtext">Computers I've built</a>
+                    <br>
+                    <div class="computers">
+                        <div class="slides">
+                            <div class="slide">
+                                <img src="./media/images/other/pc1.jpg">
+                            </div>
+                            <div class="slide">
+                                <img src="./media/images/other/pc2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="TVtext">Client Websites</a>
+                    <br><br>
+                    <ul class="TVtext">
+                        <br>
+                        <li>Random Site One</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--beginning of javscript-->
+    <script src="./index.js">
+    </script>
+    <!--End of JavaScript-->
+
+    </body>
+
+    <!--Beginning of footer-->
+    <footer>
+        <div class="footer-container">
+
+            <a id="back" href="#header" style="text-decoration: none;">
+                back to Top
+            </a>
+            <div class="footericons">
+                <a href="http://Levar.pinnock@gmail.com">
+                <img class="icon" src="./media/images/icons/email.png">
+                </a>
+                <a href=" http://www.linkedin.com/in/levar-pinnock">
+                <img  class="icon" src="./media/images/icons/linkedin.png">
+                </a>
+                <a href="https://github.com/LPKaizen">
+                <img class="icon" src="./media/images/icons/github.png">
+                </a>
+            </div>
+            <div class="footertext" id="footer">
+                <a>647.916.4205</a>
+                <a>|</a>
+                <a>Toronto, Ontario</a>
+            </div>
+        </div>
+    </footer>
+</html>
