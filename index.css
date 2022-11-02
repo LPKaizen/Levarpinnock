@@ -65,6 +65,7 @@ html {
     width: 100vw;
     background: coral;
     text-align: center;
+    overflow: hidden;
 }
 
 .footericons {
