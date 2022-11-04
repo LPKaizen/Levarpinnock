@@ -288,7 +288,10 @@ thead {
 /**Beginning of mobile support  **/
 
 @media only screen and (max-width: 1210px){
-    
+    .html {
+        overflow-x: hidden;
+    }
+
     .TV {
         width: 80vw;
         height: 61vh;
