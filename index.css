@@ -334,7 +334,11 @@ thead {
 
     .header {
         height: 100vh;
-    }
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        }
 
     .footericons {
         padding-top: 1em;
