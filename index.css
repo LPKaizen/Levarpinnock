@@ -463,8 +463,10 @@ thead {
     }
 
     .selfie {
-        width: 5vw;
-        height: 60vh;
+        width: 60vw;
+        height: 45vh;
+        /*width: 5vw;
+        height: 60vh;*/
         max-width: 340px;
         margin: 0 auto;
         border: coral 2px solid;
