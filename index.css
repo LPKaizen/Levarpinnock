@@ -259,6 +259,12 @@ thead {
     overflow-y: hidden;
 }
 
+#title-ch3 {
+    font-size:30pt;
+    color: white;
+    padding-bottom: 10px;
+}
+
 .computers {
     overflow: hidden;
     margin: 0 auto;
@@ -315,6 +321,8 @@ thead {
     color: white;
     font-size: 2.5rem;
 }
+
+
 
 #url-links {
     visibility: hidden;
@@ -414,6 +422,12 @@ thead {
         border: white solid 1px;
         overflow: scroll;
         overflow-y: hidden;
+    }
+
+    #title-ch3 {
+        font-size:18pt;
+        color: white;
+        padding-bottom: 10px;
     }
 
     .header {
