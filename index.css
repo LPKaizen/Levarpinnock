@@ -463,13 +463,13 @@ thead {
     }
 
     .selfie {
-        width: 60vw;
-        height: 45vh;
+        max-width: 4vw;
+        height: 52vh;
         /*width: 5vw;
         height: 60vh;*/
         max-width: 340px;
         margin: 0 auto;
-        border: coral 2px solid;
+        border: coral 1px solid;
     }
 
     .aboutme {
