@@ -51,6 +51,7 @@ a:visited {
 .hover:hover {
     color: coral;
     transition: 200ms;
+    cursor: pointer;
 }
 
 .goback{
@@ -62,6 +63,7 @@ a:visited {
 .goback:hover {
     color: coral;
     transition: 200ms;
+    cursor: pointer;
 }
 
 
