@@ -281,15 +281,13 @@ thead {
     position: relative;
 }
 
-.slides {
+#slides {
     top: 0%;
     position: relative;
     width: 100%;
     transition: 0.6s;
 }
-.slides:hover { 
-    top: -100%;  
-}  
+
 
  .slide {
     top: 0%;
@@ -425,9 +423,9 @@ thead {
     }
 
     #title-ch3 {
-        font-size:18pt;
+        font-size:15pt;
         color: white;
-        padding-bottom: 10px;
+        padding-bottom: 1px;
     }
 
     .header {
@@ -518,6 +516,14 @@ thead {
         width: 60vw;
         height: 45vh;
         border: coral 3px solid;
+    }
+
+    .url-container {
+        padding-top: 5vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
     }
 }
 /** End of mobile Support **/
