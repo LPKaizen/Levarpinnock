@@ -12,6 +12,9 @@ function changeOne() {
 
     document.getElementById("ch3").style.visibility = "hidden";
     document.getElementById("ch3").style.display = "none";
+
+    document.getElementById("url-links").style.visibility = "hidden";
+    document.getElementById("url-links").style.display = "none";
 }
 
 function changeTwo() {
@@ -26,6 +29,9 @@ function changeTwo() {
 
     document.getElementById("ch3").style.visibility = "hidden";
     document.getElementById("ch3").style.display = "none";
+
+    document.getElementById("url-links").style.visibility = "hidden";
+    document.getElementById("url-links").style.display = "none";
 }
 
 function changeThree() {
@@ -40,6 +46,9 @@ function changeThree() {
 
     document.getElementById("ch3").style.visibility = "visible";
     document.getElementById("ch3").style.display = "block";
+
+    document.getElementById("url-links").style.visibility = "hidden";
+    document.getElementById("url-links").style.display = "none";
 }
 
 function changePage() {
@@ -57,4 +66,20 @@ function changePage() {
     document.getElementById("pagetwo").style.display = "none";
     document.getElementById("pagetwo").style.visibility = "hidden";
     }
+}
+
+function UrlLinks() {
+    document.getElementById("ch3").style.visibility = "hidden";
+    document.getElementById("ch3").style.display = "none";
+
+    document.getElementById("url-links").style.visibility = "visible";
+    document.getElementById("url-links").style.display = "block";
+}
+
+function UrlLinks2() {
+    document.getElementById("url-links").style.visibility = "hidden";
+    document.getElementById("url-links").style.display = "none";
+
+    document.getElementById("ch3").style.visibility = "visible";
+    document.getElementById("ch3").style.display = "block";
 }

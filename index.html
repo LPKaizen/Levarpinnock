@@ -11,7 +11,6 @@
     <!--Beginning of body-->
     <body id="header">
         
-
         <!--Navagation Bar-->
         <section class="header">
             <nav class="navbar">
@@ -155,8 +154,9 @@
 
                 <!--Channel 3: Tech Demos-->
                 <div id="ch3" style="display: none;">
-                    <a class="TVtext">Computers I've built</a>
                     <br>
+                    <a class="TVtext" style="font-size:30pt;">Computers I've built</a>
+                    <br><br>
                     <div class="computers">
                         <div class="slides">
                             <div class="slide">
@@ -167,12 +167,23 @@
                             </div>
                         </div>
                     </div>
-                    <a class="TVtext">Client Websites</a>
                     <br><br>
                     <ul class="TVtext">
-                        <br>
-                        <li>Random Site One</li>
+                        <li onclick="UrlLinks()" class="hover">Click here to view my websites and projects</li>
                     </ul>
+                </div>
+                 <!--Channel 3-b: URL Links-->
+                <div id="url-links" class="TVtext">
+                    <div class="url-container">
+                        <br><br><br><br>
+                        <a style="font-size:30pt;color: coral;padding-bottom: 10px;">Projects</a>
+                        <a class="url-format" href="https://lpkaizen.github.io/secretagentsupply/">Secret Agent Supply</a>
+                        <a class="url-format" href="https://lpkaizen.github.io/excursion/" target="_blank">Excursion</a>
+                        <a class="url-format" href="https://lpkaizen.github.io/Teacozy/">Tea Cozy</a>
+                        <a class="url-format" href="https://lpkaizen.github.io/Tortoiseshell-Optics/">Tortoiseshell Optics</a>
+                        <a>________________</a>
+                        <a onclick="UrlLinks2()" class="goback">Go Back</a>
+                    </div>
                 </div>
             </div>
         </section>

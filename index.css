@@ -9,6 +9,15 @@ html {
     margin: 0;
 }
 
+a:link {
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:visited { 
+    text-decoration: none; 
+    color: white; 
+   }
 
 .navbar {
     text-align: center;
@@ -36,6 +45,22 @@ html {
 .btn:hover {
     background: coral;
     color: black;
+    transition: 200ms;
+}
+
+.hover:hover {
+    color: coral;
+    transition: 200ms;
+}
+
+.goback{
+    font-size:15pt;
+    color:darkgrey;
+    padding-top: 20px;
+}
+
+.goback:hover {
+    color: coral;
     transition: 200ms;
 }
 
@@ -289,7 +314,38 @@ thead {
     font-size: 2.5rem;
 }
 
+#url-links {
+    visibility: hidden;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    border: white solid 1px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 
+.url-format {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.url-format:hover {
+    color: coral;
+    transition-duration: 500ms;
+}
+
+
+.url-container {
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 
 /**Beginning of mobile support  **/
 
