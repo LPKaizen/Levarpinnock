@@ -15,8 +15,8 @@
         <section class="header">
             <nav class="navbar">
                 <a class="btn" onclick="changeOne()">About Me</a>
-                <a class="btn" onclick="changeTwo()">Services</a>
-                <a class="btn" onclick="changeThree()" class="demos">Tech Demos</a>
+                <a class="btn" onclick="changeTwo()">Tutorials</a>
+                <a class="btn" onclick="changeThree()" class="demos">Projects</a>
                 <a href="#footer" class="btn" class="contactb">Contact</a>
             </nav>
 
@@ -47,7 +47,7 @@
                 <div id="ch1" style="display: none;">
                     <div class="aboutmeflex">
                         
-                        <div class="aboutme" style ="color: white; font-size: 1.3rem;">
+                        <div class="aboutme" style ="color: white; font-size: 1.3rem;overflow: scroll;">
                             <br>
                             <a style="line-height: 1.5;">
                                 I graduated from Sheridan College in 2014 with an Advanced Diploma in Computer Systems Engineering. My first job out of school was working as a Data Entry Clerk. I hated it, but loved working from home on my computer, 
@@ -84,9 +84,12 @@
                     </div>
                 </div>
 
-                <!--Channel 2: Services-->
+                <!--Channel 2: tutorials(formally Services)-->
                 <div id="ch2" style="display: none;">
-                    <table width="100%" height="100%">
+                    <div class="comingsoon">
+                        <a style="font-size: 60px;color: white;" >Coming Soon</a>
+                    </div>
+                  <!--  <table width="100%" height="100%">
                         <thead>
                             <td>Services</td>
                             <td>Pricing</td>
@@ -133,36 +136,36 @@
                                 </td>                            
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
 
-                <!--Channel 3: Tech Demos-->
-                <div id="ch3" style="display: none;">
-                    <br>
-                    <a id="title-ch3">Computers I've built    </a>
-                    <br>
-                    <a style="color: white">(Tap Picture to see more)</a>
-                    <br><br>
-                    <div onclick="SlideShow()" class="computers">
-                        <div id="slides">
-                            <div class="slide">
-                                <img src="./media/images/other/pc1.jpg">
-                            </div>
-                            <div class="slide">
-                                <img src="./media/images/other/pc2.jpg">
-                            </div>
+                <!--Channel 3: Projects(formally Tech Demos)-->
+            <div id="ch3" style="display: none;">
+                <br>
+                <a id="title-ch3">Computers I've built</a>
+                <br>
+                <a style="color: white">(Tap Picture to see more)</a>
+                <br><br>
+                <div onclick="SlideShow()" class="computers">
+                    <div id="slides">
+                        <div class="slide">
+                            <img src="./media/images/other/pc1.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="./media/images/other/pc2.jpg">
                         </div>
                     </div>
+                </div>
                     <br>
                     <ul class="TVtext">
-                        <li onclick="UrlLinks()" class="hover">Click here to view my projects</li>
+                        <li onclick="UrlLinks()" class="hover">Go Back</li>
                     </ul>
                 </div>
                  <!--Channel 3-b: URL Links-->
                 <div id="url-links" class="TVtext">
                     <div class="url-container">
                         <br><br><br><br>
-                        <a style="font-size:30pt;color: coral;padding-bottom: 10px;">Projects</a>
+                        <a style="font-size:50pt;color: coral;padding-bottom: 10px;">Projects</a>
                         <a class="url-format" href="https://lpkaizen.github.io/excursion/" target="_blank">Excursion</a>
                         <a class="url-format" href="https://lpkaizen.github.io/Teacozy/" target="_blank">Tea Cozy</a>
                         <a class="url-format" href="https://lpkaizen.github.io/secretagentsupply/" target="_blank">Secret Agent Supply</a>
@@ -170,7 +173,7 @@
                         
                         
                         <a>________________</a>
-                        <a onclick="UrlLinks2()" class="goback">Go Back</a>
+                        <a onclick="UrlLinks2()" class="goback">Click here to view some computers I've built!</a>
                     </div>
                 </div>
             </div>

@@ -73,11 +73,11 @@ function changeThree() {
     document.getElementById("ch2").style.visibility = "hidden";
     document.getElementById("ch2").style.display = "none";
 
-    document.getElementById("ch3").style.visibility = "visible";
-    document.getElementById("ch3").style.display = "block";
+    document.getElementById("url-links").style.visibility = "visible";
+    document.getElementById("url-links").style.display = "block";
 
-    document.getElementById("url-links").style.visibility = "hidden";
-    document.getElementById("url-links").style.display = "none";
+    document.getElementById("ch3").style.visibility = "hidden";
+    document.getElementById("ch3").style.display = "none";
 }
 
 function changePage() {

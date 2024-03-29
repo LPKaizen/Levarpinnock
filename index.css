@@ -229,6 +229,9 @@ img {
     overflow-y: hidden;
 }
 
+.comingsoon {
+    padding-top: 25vh;
+}
 /**beginning of table stuff **/
 
 tr, td ,table {
@@ -339,6 +342,8 @@ thead {
 .url-format {
     padding-top: 10px;
     padding-bottom: 10px;
+    color: whitesmoke;
+    font-size: 2.5rem;
 }
 
 .url-format:hover {
