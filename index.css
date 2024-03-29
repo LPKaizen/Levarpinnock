@@ -154,7 +154,7 @@ img {
     height:inherit;
     text-align: center;
     border: white solid 1px;
-    overflow: scroll;
+/** overflow: scroll; **/
     overflow-x: hidden;
     overflow-y: hidden;
 }
