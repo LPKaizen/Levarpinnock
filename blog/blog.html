@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Blog</title>
+    <link rel='stylesheet' type='text/css' href="./blog.css">
+</head>
+<body>
+
+    <header>
+        <h1>Levar's Blog</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="Blogpost1()" href="#post1">How to setup a Windows Virtual Machine using VirtualBox</a></li>
+            <li><a onclick="Blogpost2()" href="#post2">How to create an Active Directory Lab</a></li>
+            <li><a onclick="Blogpost3()" href="#post3">How to Setup a Safe sandbox environment for Malware testing, using VirtualBox</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="post1">
+            <h2 style="text-align: center;">Installing a Virtual Machine using virtual Box</h2>
+            <p>In this blog Post, I'm going to discuss how to create your own virtual windows active directory. If you 
+                follow these instructions correctly, by the end of this blog post you will have built a functioning active directory network, complete
+                with a fully configured Server Virtual machine, networked together with 2 client virtual machines. You will 
+                also generate one thousand fake users on this active directory, to simulate managing a large scale company. Lets get started!
+            </p>
+        </div>
+        <div id="post2" class="post-hide">
+            <h2>Post 2</h2>
+            <p>This is the content of Post 2. Duis tincidunt enim sed sapien sollicitudin, auctor scelerisque ligula 
+                varius. Curabitur nec augue vitae tortor volutpat ultricies. In hac habitasse platea dictumst. 
+                Integer vel justo arcu. </p>
+        </div>
+        <div id="post3" class="post-hide">
+            <h2>Post 3</h2>
+            <p>This is the content of Post 3. Vivamus feugiat elit nec felis hendrerit, at scelerisque metus 
+                fermentum. Ut commodo vel purus at consequat. Proin eget enim felis. Vivamus volutpat hendrerit 
+                felis, sed aliquet mi accumsan ut. </p>
+        </div>
+    </div>
+    <!--beginning of javscript-->
+    <script src="./blog.js">
+    </script>
+    <!--End of JavaScript-->
+</body>
+</html>
