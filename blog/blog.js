@@ -32,32 +32,17 @@ function Blogpost3() {
     document.getElementById("post1").style.display = "none";
 }
 
+
+
 ///////////////////////////////////////////
 
-/* function SlideShow() {
-    if(document.getElementById("slides").style.top == "0%")
+ function menuToggle() {
+    if(document.getElementById("slides").style.left == "-520vw")
     {
-    document.getElementById("slides").style.top = "-100%";
+    document.getElementById("slides").style.left = "0vw";
     }
     else 
     {
-    document.getElementById("slides").style.top = "0%";
+    document.getElementById("slides").style.left = "-520vw";
     }
 }
-
-function changePage() {
-    if(document.getElementById("pageone").style.display == "block")
-    {
-    document.getElementById("pagetwo").style.display = "block";
-    document.getElementById("pagetwo").style.visibility = "visible";
-    document.getElementById("pageone").style.display = "none";
-    document.getElementById("pageone").style.visibility = "hidden";
-    }
-    else
-    {
-    document.getElementById("pageone").style.display = "block";
-    document.getElementById("pageone").style.visibility = "visible";
-    document.getElementById("pagetwo").style.display = "none";
-    document.getElementById("pagetwo").style.visibility = "hidden";
-    }
-} */

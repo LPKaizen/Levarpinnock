@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Blog</title>
+    <title>Levar's Blog</title>
     <link rel='stylesheet' type='text/css' href="./blog.css">
 </head>
 <body>
 
     <header>
         <h1>Levar's Blog</h1>
+        <p><span style="font-size: 24px;" onclick="menuToggle()" class="menubutton">Menu</span></p>
     </header>
 
-    <nav>
+    <nav id="slides">
         <ul>
             <li><a onclick="Blogpost1()" href="#post1">How to setup a Windows Virtual Machine using VirtualBox</a></li>
             <li><a onclick="Blogpost2()" href="#post2">How to create an Active Directory Lab</a></li>
@@ -21,12 +22,12 @@
     </nav>
 
     <div class="content">
-        <div id="post1">
-            <h2 style="text-align: center;">Installing a Virtual Machine using virtual Box</h2>
-            <p>In this blog Post, I'm going to discuss how to create your own virtual windows active directory. If you 
+        <div id="post1" class="postformat">
+            <h2>Installing a Virtual Machine using virtual Box</h2>
+            <p>In this blog Ppost, I'm going to show you step by step instructions on how to create your own virtual windows active directory. If you 
                 follow these instructions correctly, by the end of this blog post you will have built a functioning active directory network, complete
                 with a fully configured Server Virtual machine, networked together with 2 client virtual machines. You will 
-                also generate one thousand fake users on this active directory, to simulate managing a large scale company.</p>
+                also generate one thousand fake users on this active directory, to simulate managing a large scale company</p>
             <br>
             <p>NOTE: This tutorial assumes you're installing on windows. If not, skip all of step 3. With that out of the way, lets get started!</p>
         
@@ -44,7 +45,7 @@
             <p>3e. Choose where you want to save your iso file on your computer, and click save</p>
             <p>3f. Click finish when the tool completes the download and creation of the media</p>
             <br>
-            <p>4. Install and Configure ViWhertualbox</p>
+            <p>4. Install and Configure Virtualbox</p>
             <br>
             <p>****Configure new Windows Server VM****</p>
             <br>
@@ -150,7 +151,7 @@
             <p>15e.Enter the Domain name server address( the internal network interface ip address), 172.16.0.1, and click "add", then next 4 times, then finish.</p>
             <p>15f. Right click on your domain the the DHCP settings and click "authorize". Click refresh in the same menu to see if the setting have worked, which will be represented as two green checkmarks on IPV4 and IPV6</p>
             <br>
-            <p>Bonus****Creating new users using powershell - Pre ing the system for running the script****</p>
+            <p>Bonus****Creating new users using powershell - Preping the system for running the script****</p>
             <p>Using a powershell script we are going to add one thousand new users. you don't need to use powershell and can add however many users you want manually, but this will serve to stimulate a more realistic environment.</p>
             <br>
             <p>16. **this step is only for the purpose of this lap, and should not be done in regular production environments as it hinders security, allowing anyone to download things directly to the server via web browsing***</p>
