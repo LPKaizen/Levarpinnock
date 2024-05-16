@@ -26,8 +26,137 @@
             <p>In this blog Post, I'm going to discuss how to create your own virtual windows active directory. If you 
                 follow these instructions correctly, by the end of this blog post you will have built a functioning active directory network, complete
                 with a fully configured Server Virtual machine, networked together with 2 client virtual machines. You will 
-                also generate one thousand fake users on this active directory, to simulate managing a large scale company. Lets get started!
-            </p>
+                also generate one thousand fake users on this active directory, to simulate managing a large scale company.</p>
+            <br>
+            <p>NOTE: This tutorial assumes you're installing on windows. If not, skip all of step 3. With that out of the way, lets get started!</p>
+        
+            <br>
+            <br>
+            <p>This tutorial assumes you're installing on windows. If not, skip all of step 3.</p>
+            <br>
+            <p>1. Download Virtual box</p>
+            <p>2. Download Windows Server 2019</p>
+            <p>3. Download Windows by first downloading the Windows Media Creation tool and running the program</p>
+            <p>3a. Scroll to the bottom and click accept</p>
+            <p>3b. Select "Create installation media" and click next</p>
+            <p>3c. Select your language > Windows 10 > 64 bit, then click next</p>
+            <p>3d. Select ISO file and click next</p>
+            <p>3e. Choose where you want to save your iso file on your computer, and click save</p>
+            <p>3f. Click finish when the tool completes the download and creation of the media</p>
+            <br>
+            <p>4. Install and Configure ViWhertualbox</p>
+            <br>
+            <p>****Configure new Windows Server VM****</p>
+            <br>
+            <br>
+            <p>5. Install windows server virtual machine. Go to the machine > create new</p>
+            <p>5a. For name and operating system, pick any name you want, select the windows server 2019 iso you downloaded earlier, and choose which folder you want your vm to be saved in. You can use the default folder if there is enough space</p>
+            <p>*special note* Sometimes if you do this, the machine error loops during the installation. If that happens, leave this field blank "<not selected>" , then when you finish configuring the machine, go into its settings, and in the cd media, browse to the iso file and hit ok. then boot up the machine**</p>
+            <p>5b. Leave everything else as is. Don't worry about guest additions now, we will install those later as an optional but recommended installation step for ease of use</p>
+            <p>5c. Choose your ram and number of cpu cores. Use what you have and be aware of your available resources. 4gbs of ram +  2 to 4 cpus is good enough!!</p>
+            <p>5d. Create a harddrive, 20 gbs is more than enough for this machine</p>
+            <p>5e. Click ok, then go to the settings (yellow gear icon)</p>
+            <p>5f. Go to advanced, then change shared clipboard and Drag 'n' drop to directionalrquote</p>
+            <p>5g. Go to network, then adapter 2, and enable network adapter. make sure to choose attached to the internal network on the drop-down menu. then click ok</p>
+            <p>5h. Click on the Storage icon, then click the CD in the storage device.</p>
+            <p>5i. Click on the blue CD icon, then select the Image file you downloaded earlier, and click ok</p>
+            <br>
+            <p>6. Start the machine</p>
+            <p>6.a Select your language and keyboard method and click next. in the next window, click "install now"</p>
+            <p>6b. Select the ldblquote standard evaluation with desktop mode" option and click next</p>
+            <p>6c. Check the box beside "accept the license terms" , and then click next</p>
+            <p>6d . Select "install windows only" option</p>
+            <p>6e. Select the harddrive, then click next</p>
+            <p>**At this point, the installer will take awhile to install windows and will reboot the PC. DO NOT TOUCH ANYTHING until the computer fully reboots and automatically returns to the installation process.</p>
+            <br>
+            <p>7. Configure Windows - pick a password and click finish</p>
+            <p>7a. To click Ctrl+Alt+Del in the virtual machine, select it from the VM menu, then enter the password you picked earlier</p>
+            <p>7b. Click yes on allowing your PC to be discoverable</p>
+            <br>
+            <p>****Bonus*** Guest additions installation</p>
+            <br>
+            <p>8. In the VM menu, click devices, and then "insert Guest Additions CD image"</p>
+            <p>8a. Go to file explorer >  This PC > then double click the CD drive with the virtual box guest additions mounted on it</p>
+            <p>8b. Double click "VBWindowsAdditions-amd64"</p>
+            <p>8c. Click next, next again, and the install</p>
+            <p>8d. Select Reboot now **if you get errors after rebooting, retry step 8 from the beginning, but this time choose reboot later instead of reboot now, then start the machine from the VM program.</p>
+            <p>**If everything is installed correctly, you should now be able to resize the window, and the UI of the VM will be responsive and fast, just like a normal PC.</p>
+            <br>
+            <p>****Configure networking****</p>
+            <br>
+            <p>This next step will help us determine which of the two network interfaces is the local one, and which is connected to the internet. the interface connected to the internet will have a normal IP address like 10.X.X.X. the other one will not. Once you determine which one is which by following the steps below, you can name them appropriately to make things easier for us later</p>
+            <br>
+            <p>9. Click on network icon in the tray, then the network</p>
+            <p>9a Click on " Change adapter settings"</p>
+            <p>9b. Right click the first adapter and select " status"</p>
+            <p>9c. Click "Details"</p>
+            <p>9d. Check the IP address, and determine if it's the internet interface or the network interface. Remember, the interface connected to the internet will likely have a normal ipv4 address like 10.X.X.X, the local interface will likely have an auto-assigned address like 169.X.X.X. In this case, this one is the interface connected to the internet. Another hint that can help you tell which interface is the local one, is the lack of packets being received, due to it being unconfigured</p>
+            <p>9e. Once you've determined which one is which, label them by right clicking each interface and selecting "Rename"</p>
+            <br>
+            <p>****assigning ip addressing to the internal network interface****</p>
+            <br>
+            <p>10. Next we're going to manually configure the internal network interface. right click on the internal interface, and select properties. then click internet protocol version 4, and then properties</p>
+            <p>10a. Enter an appropriate ip address as seen in the screenshot, in this case ,we will use 172.16.0.1 with a 255.255.255.0 subnet address. The DNS will be 127.0.0.1, since it will be the host device that will resolve addresses for us. Click ok when everything is entered in</p>
+            <p>10b. To remain computer, right-click the windows icon, click system, scroll down and then click "rename PC" !!</p>
+            <p>10c. Choose your name, click next, then restart now (just hit continue when/if asked for shutdown reason) !!</p>
+            <br>
+            <p>****Install windows server and configure components</p>
+            <br>
+            <p>11. Go to the Server Manager program on your PC , and on the main page, click on "Add Roles and Features"</p>
+            <p>11b. Click next three times, and at the server roles section, select "Active Directory Domain Services". Click "add features" in the next window, then click next.</p>
+            <p>11c.Hit next 2 more times, then click install.  The installation will take some time. Be patient. click close once the installation completes</p>
+            <br>
+            <p>****Configuring Domain Server****</p>
+            <br>
+            <p>12. In the Server manager main page, click on the yellow flag, then click on " Promote this server to a domain server"</p>
+            <p>12a. Choose add new forest, then type in a Domain name. In this case, I choose "mydomain.com". click next afterwards</p>
+            <p>12b. We won't be using this for the lab, but it is required for setting up the domain controller. in the directory services restore mode password section, choose any password here that you want, then keep clicking next until you get to the final "results" tab, then click install.</p>
+            <p>12c. Allow the PC to restart</p>
+            <br>
+            <p>****Setting up Admin Account****</p>
+            <br>
+            <p>13. Open the start menu, and open active Directory Users and Computers</p>
+            <p>13a. right-click on your newly created domain on the left column, and hover over "new" then click on "Organizational Unit"</p>
+            <p>13b. This will be our admin org, you can call it whatever you want, but I will be using "_ADMINS". For the purpose of this lab, uncheck "Protect container from accidental deletion". **NOTE**in real-world work environments, you should always leave this option checked**. Then click ok</p>
+            <p>13c. Now, right click on your newly created org, and select "new", and "new user"</p>
+            <p>13d. Enter your name in the fields, with whatever username you want (you will need to remember this password, do not forget it). In this case, I'll use</p>
+            <p>"a-lpinnock". "a" is for "Admin" followed by a dash- and my first initial and second name.</p>
+            <p>13e. Choose your password, and for this lab, uncheck "User must change password on next logon" and check" Password never expires", then click next and finish</p>
+            <p>13f. now click on your admin org, and right click on your newly created user, and click "Properties"</p>
+            <p>13g. Click on the "Member of" Tab, then click on add</p>
+            <p>13h. Type in "Domain Admins" in the object names field, click "check names" then click ok.</p>
+            <p>13i. Click apply and Ok. then sign out of the machine, do not shutdown.</p>
+            <p>13j. Click on "Other User" and then enter in the user you created earlier, along with the password you picked for this user.</p>
+            <br>
+            <p>****install and configure network traffic routing****</p>
+            <br>
+            <p>14. Go to the Server Manager, and click on add new roles and features</p>
+            <p>14a. Click next, next , next, then select "Remote Access" From the List., then hit next 3 times</p>
+            <p>14b. On the "Role Services" section, check "Routing", then click, "add Features", then click next 3 times, then install.</p>
+            <p>14c. While this installs, you can hit close and the installation will continue uninterrupted, or wait until it's done and close this window</p>
+            <p>14d. Go to the Server manager, and click tools, then select "routing and remote access"</p>
+            <p>14e. Right click on your domain controller, and select "Configure and Enable Routing and Remote Access"</p>
+            <p>14f. Click next, the select "Network address Translation, then hit next</p>
+            <p>14g. Select the Interface you labeled as "Internet" as this will link your network to the internet. Then hit finish</p>
+            <p>***Sometimes with virtualization, the option to select network interfaces is greyed out. This is an error that can be solved by simply closing the window, and repeating step number 14d  - 14g****</p>
+            <br>
+            <p>****Installing DHCP Server****</p>
+            <br>
+            <p>15. Go to server Manager, and click add roles and features. From here, hit next 3 times, and in the "Features" section ,select "DHCP Server", then click ldblquote add Features. Click next 3 times, then click install. When the installation closes, hit close.</p>
+            <p>15a. Now go to tools, and hit DHCP</p>
+            <p>15b. Click on the domain you created, right click on IPV4, then select, "New Scope"</p>
+            <p>15c. Click next, then name your scope. For ease of use, I will use the Gateway address(the ip address assigned to our internal interface) plus the address range, which will be 172.16.0.100-200. then click next</p>
+            <p>15d. Next you p<br>ut in the ip range and subnet mask, as shown in the screenshot, then click next 4 times</p>
+            <p>15e.Enter the Domain name server address( the internal network interface ip address), 172.16.0.1, and click "add", then next 4 times, then finish.</p>
+            <p>15f. Right click on your domain the the DHCP settings and click "authorize". Click refresh in the same menu to see if the setting have worked, which will be represented as two green checkmarks on IPV4 and IPV6</p>
+            <br>
+            <p>Bonus****Creating new users using powershell - Pre ing the system for running the script****</p>
+            <p>Using a powershell script we are going to add one thousand new users. you don't need to use powershell and can add however many users you want manually, but this will serve to stimulate a more realistic environment.</p>
+            <br>
+            <p>16. **this step is only for the purpose of this lap, and should not be done in regular production environments as it hinders security, allowing anyone to download things directly to the server via web browsing***</p>
+            <p>Click on "Configure this Server" then click on "IE enhanced Security Configuration"</p>
+            <br>
+            <br>
         </div>
         <div id="post2" class="post-hide">
             <h2>Post 2</h2>
