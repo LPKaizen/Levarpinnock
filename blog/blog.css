@@ -67,3 +67,10 @@ p {
     color: orange;
     cursor: pointer;
 }
+
+.post1format {
+    width: 1024px;
+    height: 768px;
+    height: inherit;
+    border: orange 2px solid;
+}
