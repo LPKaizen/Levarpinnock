@@ -1,3 +1,17 @@
+#post1 {
+    
+}
+
+html {
+    background-image: url(../media/images/other/Background.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index:  -1;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,7 +20,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: coral;
     color: #fff;
     padding: 5px;
     text-align: center;
@@ -35,7 +49,17 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background-color: rgb(84, 105, 224);
+    color: seashell;
+}
+
+a:link {
+    color: coral;
+}
+
+.content a:visited {
+    color:#14da3f;
+
 }
 
 .content {
@@ -45,13 +69,19 @@ nav a:hover {
 }
 
 h2 {
-    color: #333;
+    color: #14da3f;
 }
 
 p {
     line-height: 1.6;
-    color: #555;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    
+    
 }
+
 
 .post-hide {
     display: none;
@@ -61,10 +91,13 @@ p {
     width: 1024px;
     text-align: center;
 }
-
-.menubutton:hover {
-    transition: color 0.4s ease;
-    color: orange;
+p .menubutton {
+    font-size: 24px; 
+    color: seashell;
+    transition: color 0.3s ease;
+}
+p .menubutton:hover {
+    color: rgb(84, 105, 224);
     cursor: pointer;
 }
 
@@ -73,4 +106,5 @@ p {
     height: 768px;
     height: inherit;
     border: orange 2px solid;
+    z-index: 1;
 }

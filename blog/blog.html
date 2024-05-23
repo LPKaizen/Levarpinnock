@@ -10,33 +10,35 @@
 
     <header>
         <h1>Levar's Blog</h1>
-        <p><span style="font-size: 24px;" onclick="menuToggle()" class="menubutton">Menu</span></p>
+        <p><span onclick="menuToggle()" class="menubutton">Menu</span></p>
     </header>
 
     <nav id="slides">
         <ul>
             <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory Lab</a></li>
             <li><a onclick="Blogpost2()" href="#post2">How to set up a Windows Virtual Machine using VirtualBox</a></li>
-            <li><a onclick="Blogpost3()" href="#post3">How to Setup a Safe sandbox environment for Malware testing, using VirtualBox</a></li>
+            <li><a onclick="Blogpost3()" href="#post3">How to set up a safe sandbox environment for malware testing, using VirtualBox</a></li>
+            <li><a style="text-align: center;" href="../index.html">~~~~~~~~~~Return to home page~~~~~~~~~~</a></li>
         </ul>
     </nav>
 
     <div class="content">
         <div id="post1" class="postformat">
             <h2>Installing a Virtual Machine using virtual Box</h2>
-            <p>In this blog post, I'm going to show you step by step instructions on how to create your own virtual windows active directory. If you 
-                follow these instructions correctly, by the end of this blog post you will have built a functioning active directory network, complete
-                with a fully configured Server Virtual machine, networked together with 2 client virtual machines. You will 
-                also generate one thousand fake users on this active directory, to simulate managing a large scale company</p>
+            <p>In this blog post, I'm going to show you step by step how to create your own virtual windows active directory. By the end of this post you will have built a functioning active directory network, complete
+                with a fully configured virtual windows Server, networked together with two virtual client machines! You will 
+                also generate one thousand fake users on this active directory, to simulate managing a large company</p>
             <br>
-            <p>NOTE: This tutorial assumes you're installing on windows. If not, skip all of step 3. With that out of the way, lets get started!</p>
+            <p>NOTE: This tutorial assumes you're doing this lab on on windows. If not, skip all of step 3. With that out of the way, lets get started!</p>
             <br>
             <br>
             <p>1.First we're going to download all of our tools, starting with our hypervisor. Download Virtual box by visiting <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>, then click on the "Window hosts" version to start the download</p>
             <img class="post1format" src="./posts/Post1/images/step 1 and 2/Step 1.png">
             <p>2. Next, we're going to grab our ISO file for our server. Download Windows Server 2019 by going here -> <a href="http://www.microsoft.com/en-us/evalcenter/download-windows-server-2019">http://www.microsoft.com/en-us/evalcenter/download-windows-server-2019</a>, and select the english 64-bit version</p>
             <img class="post1format" src="./posts/Post1/images/step 1 and 2/Step 2.png">
-            <p>3. now we're going to aquire our host image iso. In order to do this, we first need to download the Windows Media Creation tool, which will create the ISO we need</p>
+            <p>3. Now we're going to aquire our host image ISO. In order to do this, we first need to download the Windows Media Creation tool, which will create the ISO we need.
+                Visit <a href="https://www.microsoft.com/en-ca/software-download/windows10">https://www.microsoft.com/en-ca/software-download/windows10</a>, and click on 'download tool now'
+            </p>
             <img class="post1format" src="./posts/Post1/images/Step 3/Step 3.png">
             <p>3a. Scroll to the bottom and click accept</p>
             <img class="post1format" src="./posts/Post1/images/Step 3/Step 3a.png">
@@ -52,12 +54,12 @@
             <br>
             <p>4. Install and Configure Virtualbox</p>
             <br>
-            <p>I actually have a seperate tutorial explaining how to install and configure virtual box. if you don't know how to do this, I recommend quickly jumping to the tutorial here. It only takes 2 minutes, and the configuration shown will work with this lab. Come back once you're done, otherwise, continue on to step 5! </p>
+            <p>I've created a seperate tutorial explaining how to install and configure virtual box. if you don't know how to do this, I recommend quickly jumping to the tutorial here. It only takes 2 minutes, and the configuration shown will work with this lab. Come back once you're done, otherwise, continue on to step 5! </p>
             <br>
             <p>****Configure new Windows Server VM****</p>
             <br>
             <br>
-            <p>5. Install windows server virtual machine. Go to the machine > create new</p>
+            <p>5. Now we're going to create and configure our Windows server virtual machine. To begin, Go to the machine > create new</p>
             <img class="post1format" src="./posts/Post1/images/Step 5/5.png">
             <p>5a. For name and operating system, pick any name you want, select the windows server 2019 iso you downloaded earlier, and choose which folder you want your vm to be saved in. You can use the default folder if there is enough space</p>
             <p>*special note* Sometimes if you do this, the machine error loops during the installation. If that happens, leave this field blank "<not selected>" , then when you finish configuring the machine, go into its settings, and in the cd media, browse to the iso file and hit ok. then boot up the machine**</p>
