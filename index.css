@@ -232,6 +232,16 @@ img {
 .comingsoon {
     padding-top: 25vh;
 }
+
+.comingsoonlink {
+    font-size: 60px;
+    color: white;
+}
+
+.comingsoonlink:hover {
+    color: coral;
+    transition: 200ms;
+}
 /**beginning of table stuff **/
 
 tr, td ,table {
