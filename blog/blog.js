@@ -33,10 +33,7 @@ function Blogpost3() {
 }
 
 
-
-///////////////////////////////////////////
-
- function menuToggle() {
+function menuToggle() {
     if(document.getElementById("slides").style.left == "-520vw")
     {
     document.getElementById("slides").style.left = "0vw";
@@ -46,3 +43,11 @@ function Blogpost3() {
     document.getElementById("slides").style.left = "-520vw";
     }
 }
+
+function menuClose() {
+    if(document.getElementById("slides").style.left == "0vw")
+    {
+    document.getElementById("slides").style.left = "-520vw";
+    }
+}
+
