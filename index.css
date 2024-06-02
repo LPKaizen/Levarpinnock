@@ -46,6 +46,7 @@ a:visited {
     background: coral;
     color: black;
     transition: 200ms;
+    cursor: pointer;
 }
 
 .hover:hover {
