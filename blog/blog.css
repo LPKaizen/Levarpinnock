@@ -37,6 +37,7 @@ nav {
 }
 
 nav a {
+    text-align: center;
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -50,11 +51,11 @@ nav a:hover {
 }
 
 a:link {
-    color: coral;
+    color: rgb(165, 34, 218);
 }
 
 .content a:visited {
-    color:#14da3f;
+    color:#d43333;
 
 }
 
@@ -70,7 +71,7 @@ h2 {
 
 p {
     line-height: 1.6;
-    color: whitesmoke;
+    color:  rgb(8, 4, 1);
     font-size: 1.2rem;
     font-weight: bolder;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -79,17 +80,14 @@ p {
 }
 
 
-.post-hide {
-    display: none;
-}
-
 .postformat {
+    background-color: rgb(238, 240, 146);
     width: 1024px;
     text-align: center;
 }
 p .menubutton {
     font-size: 24px; 
-    color: seashell;
+    color: rgb(224, 208, 196);
     transition: color 0.3s ease;
 }
 p .menubutton:hover {
@@ -97,10 +95,44 @@ p .menubutton:hover {
     cursor: pointer;
 }
 
+.pendingpostformat{
+    padding-top: 140px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: none;
+}
+
 .post1format {
     width: 1024px;
+    max-width: 1020px;
     height: 768px;
     height: inherit;
     border: orange 2px solid;
     z-index: 1;
+}
+
+/**Beginning of mobile support  **/
+
+@media only screen and (max-width: 950px){
+    p {
+        font-size: 1.0rem;
+    }
+    
+    .postformat {
+        background-color: rgb(238, 240, 146);
+        width: 100vw;
+        max-width: 650px;
+        text-align: center;
+    }
+    
+    p .menubutton {
+        font-size: 16px; 
+    }
+    
+    .post1format {
+        width: 100vw;
+        max-width: 646px;
+        height: 45vh;
+    }
 }

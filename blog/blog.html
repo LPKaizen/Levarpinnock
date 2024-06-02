@@ -13,12 +13,13 @@
         <p><span onclick="menuToggle()" class="menubutton">Menu</span></p>
     </header>
 
-    <nav id="slides">
+    <nav id="slides" onclick="menuToggle()">
         <ul>
             <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory Lab</a></li>
-            <li><a onclick="Blogpost2()" href="#post2">How to set up a Windows Virtual Machine using VirtualBox</a></li>
+            <li><a onclick="Blogpost2()" href="#post2">How to setup and run a SIEM system on your home network</a></li>
             <li><a onclick="Blogpost3()" href="#post3">How to set up a safe sandbox environment for malware testing, using VirtualBox</a></li>
-            <li><a style="text-align: center;" href="../index.html">~~~~~~~~~~Return to home page~~~~~~~~~~</a></li>
+            <li><a href="../index.html">Return to home page (exit the blog)</a></li>
+            <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
             <pre>
 ________________________________________________
 ______¶_________________________________________
@@ -85,7 +86,7 @@ ________________________________________________
             <br>
             <p>4. Install and Configure Virtualbox</p>
             <br>
-            <p>I've created a seperate tutorial explaining how to install and configure virtual box. if you don't know how to do this, I recommend quickly jumping to the tutorial here. It only takes 2 minutes, and the configuration shown will work with this lab. Come back once you're done, otherwise, continue on to step 5! </p>
+            <p>Installation of virtual Box is pretty straight forward. Just double-click the executable and follow through the steps, default options are ok. If you want more direct instructions from the virtual box website, <a href="https://www.virtualbox.org/manual/ch02.html#install-win-performing" target="_blank">click here</a></p>
             <br>
             <p>****Configure new Windows Server VM****</p>
             <br>
@@ -399,13 +400,13 @@ ________________________________________________
             <br>
             <br>
         </div>
-        <div id="post2" class="post-hide">
+        <div id="post2" class="pendingpostformat">
             <h2>Post 2</h2>
-            <p>Coming Soon!</p>
+            <h1 style="color: white;">Coming Soon!</h1>
         </div>
-        <div id="post3" class="post-hide">
+        <div id="post3" class="pendingpostformat">
             <h2>Post 3</h2>
-            <p>Coming Soon!</p>
+            <h1 style="color: white;">Coming Soon!</h1>
         </div>
     </div>
     <!--beginning of javscript-->
