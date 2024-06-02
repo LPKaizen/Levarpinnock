@@ -71,7 +71,7 @@ h2 {
 
 p {
     line-height: 1.6;
-    color:  rgb(8, 4, 1);
+    color: seashell;
     font-size: 1.2rem;
     font-weight: bolder;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -81,7 +81,7 @@ p {
 
 
 .postformat {
-    background-color: rgb(238, 240, 146);
+    background-color: rgb(24, 24, 68);
     width: 1024px;
     text-align: center;
 }
@@ -91,7 +91,7 @@ p .menubutton {
     transition: color 0.3s ease;
 }
 p .menubutton:hover {
-    color: rgb(84, 105, 224);
+    color: rgb(24, 24, 68);
     cursor: pointer;
 }
 
@@ -120,7 +120,6 @@ p .menubutton:hover {
     }
     
     .postformat {
-        background-color: rgb(238, 240, 146);
         width: 100vw;
         max-width: 650px;
         text-align: center;
