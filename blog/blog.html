@@ -18,7 +18,7 @@
             <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory Lab</a></li>
             <li><a onclick="Blogpost2()" href="#post2">How to setup and run a SIEM system on your home network</a></li>
             <li><a onclick="Blogpost3()" href="#post3">How to set up a safe sandbox environment for malware testing, using VirtualBox</a></li>
-            <li><a href="../index.html">Return to home page (exit the blog)</a></li>
+            <li><a href="../index.html">Return to home page (Exit the Blog)</a></li>
             <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
             <pre>
 ________________________________________________
@@ -297,24 +297,19 @@ ________________________________________________
             <img class="post1format" src="./posts/Post1/images/Step 16/161.png">
             <p>16a. Click "off" for both settings. This will allow us to browse the internet on the server PC, as well as not annoyingly spam us with warning messages during the next few steps. Afterwards click ok</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16a.png">
-            <p>16b. Open internet explorer, and browse to the URL shown in the screenshot to obtain the powershell script we will be using to expedite the process of creating hundreds of new users. the link is "https://github.com/joshmadakor1/AD_PS/archive/master.zip. hit enter, and you will be asked to save a file from github, select save, then open folder.</p>
-            <img class="post1format" src="./posts/Post1/images/Step 16/16b.png">
-            <p>16c. Extract the folder to your desktop for ease of use</p>
-            <img class="post1format" src="./posts/Post1/images/Step 16/16c.png">
-            <img class="post1format" src="./posts/Post1/images/Step 16/16c1.png">
-            <img class="post1format" src="./posts/Post1/images/Step 16/16c2.png">
-            <p>16d. Open the extracted folder, open the names text file, and at the top of the file, add your first and last name. hit save and close the file</p>
+            <p>16b.To download the script, <a href="https://github.com/LPKaizen/Levarpinnock/releases/download/1.0/Scripts.zip">click here</a>, then extract the folder to your desktop for ease of use</p>
+            <p>16c. Inside the extracted folder, open the .txt file, and at the top of the file add your first and last name. hit save and close the file</p>
+            <img class="post1format" src="./posts/Post1/images/Step 16/16c.PNG">
+            <img class="post1format" src="./posts/Post1/images/Step 16/16c1.PNG">
+            <p>16d. Now open the start menu, go to windows powershell, right click Powershell ISE, go to more, then click run as administrator, then click yes</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16d.png">
-            <img class="post1format" src="./posts/Post1/images/Step 16/16d1.png">
-            <p>16e. Now open the start menu, go to windows powershell, right click Powershell ISE, go to more, then click run as administrator, then click yes</p>
+            <p>16e. Open the powershell script you downloaded earlier</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16e.png">
-            <p>16f. Open the powershell script you downloaded earlier</p>
+            <img class="post1format" src="./posts/Post1/images/Step 16/16e1.png">
+            <p>**NOTE**This next step should never be done in a production environment. But for the purposes of this lab, we will be enabling the ability to run custom powershell scripts on this machine****</p>
+            <p>16f. In the console, type "Set-ExecutionPolicy Unrestricted", and hit enter, then select "yes to all"</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16f.png">
             <img class="post1format" src="./posts/Post1/images/Step 16/16f1.png">
-            <p>**NOTE**This next step should never be done in a production environment. But for the purposes of this lab, we will be enabling the ability to run custom powershell scripts on this machine****</p>
-            <p>16g. In the console, type " Set-ExecutionPolicy Unrestricted, and hit enter, then select "yes to all"</p>
-            <img class="post1format" src="./posts/Post1/images/Step 16/16g.png">
-            <img class="post1format" src="./posts/Post1/images/Step 16/16g1.png">
             <p>****This script will automatically create a new user org called "_USERS" then populate it with around a thousand users using the text file with random names in it. in addition to this, it will format the names into a naming convention similar to what you might normally seen in a real production environment****</p>
             <br>
             <p>*****Running the script*****</p>
