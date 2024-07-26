@@ -16,8 +16,8 @@
     <nav id="slides" onclick="menuToggle()">
         <ul>
             <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory Lab</a></li>
-            <li><a onclick="Blogpost2()" href="#post2">How to setup and run a SIEM system on your home network</a></li>
-            <li><a onclick="Blogpost3()" href="#post3">How to set up a safe sandbox environment for malware testing, using VirtualBox</a></li>
+            <li><a onclick="Blogpost2()" href="#post2">How to setup and run a SIEM and Honeypot VM with Azure</a></li>
+            <li><a onclick="Blogpost3()" href="#post3">How to Create a DNS Sinkhole for your network with a Rasberry Pi Computer Via Pihole</a></li>
             <li><a href="../index.html">Return to home page (Exit the Blog)</a></li>
             <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
             <pre>
@@ -109,6 +109,7 @@ ________________________________________________
             <p>5g. Go to network, then adapter 2, and enable network adapter. make sure to choose attached to the internal network on the drop-down menu. then click ok</p>
             <img class="post1format" src="./posts/Post1/images/Step 5/5g.png">
             <p>5h. Click on the Storage icon, then click the CD in the storage device.</p>
+            <br>
             <p>5i. Click on the blue CD icon, then select the Image file you downloaded earlier, and click ok</p>
             <img class="post1format" src="./posts/Post1/images/Step 5/5i.png">
             <br>
@@ -224,6 +225,7 @@ ________________________________________________
             <p>13a. right-click on your newly created domain on the left column, and hover over "new" then click on "Organizational Unit"</p>
             <img class="post1format" src="./posts/Post1/images/Step 13/13a.png">
             <p>13b. This will be our admin org, you can call it whatever you want, but I will be using "_ADMINS". For the purpose of this lab, uncheck "Protect container from accidental deletion". **NOTE**in real-world work environments, you should always leave this option checked**. Then click ok</p>
+            <br>
             <p>13c. Now, right click on your newly created org, and select "new", and "new user"</p>
             <img class="post1format" src="./posts/Post1/images/Step 13/13c.png">
             <p>13d. Enter your name in the fields, with whatever username you want (you will need to remember this password, do not forget it). In this case, I'll use</p>
@@ -298,6 +300,7 @@ ________________________________________________
             <p>16a. Click "off" for both settings. This will allow us to browse the internet on the server PC, as well as not annoyingly spam us with warning messages during the next few steps. Afterwards click ok</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16a.png">
             <p>16b.To download the script, <a href="https://github.com/LPKaizen/Levarpinnock/releases/download/1.0/Scripts.zip">click here</a>, then extract the folder to your desktop for ease of use</p>
+            <br>
             <p>16c. Inside the extracted folder, open the .txt file, and at the top of the file add your first and last name. hit save and close the file</p>
             <img class="post1format" src="./posts/Post1/images/Step 16/16c.PNG">
             <img class="post1format" src="./posts/Post1/images/Step 16/16c1.PNG">
@@ -339,6 +342,7 @@ ________________________________________________
             <p>18d. Start the client machine you just configured, and when asked, mount the windows 10 iso you downloaded earlier, then click mount and retry</p>
             <img class="post1format" src="./posts/Post1/images/Step 18/18d.png">
             <p>18e. Hit next, and install.</p>
+            <br>
             <p>18f. Click " I don't have a Product Key", then select "Windows 10 pro". and hit next</p>
             <img class="post1format" src="./posts/Post1/images/Step 18/18f.png">
             <img class="post1format" src="./posts/Post1/images/Step 18/18f1.png">
@@ -381,6 +385,7 @@ ________________________________________________
             <img class="post1format" src="./posts/Post1/images/Step 20/20a.png">
             <img class="post1format" src="./posts/Post1/images/Step 20/20a1.png">
             <p>20b. Now, enter the username and password you created earlier. Essentially, any account you created on this domain should work, including your admin account, or regular access accounts generated from the shell script</p>
+            <br>
             <p>20c. Allow the PC to restart when asked to</p>
             <img class="post1format" src="./posts/Post1/images/Step 20/20c.png">
             <img class="post1format" src="./posts/Post1/images/Step 20/20c1.png">
@@ -395,9 +400,152 @@ ________________________________________________
             <br>
             <br>
         </div>
-        <div id="post2" class="pendingpostformat">
-            <h2>Post 2</h2>
-            <h1 style="color: white;">Coming Soon!</h1>
+        <div id="post2" class="postformat">
+            <h2>Tutorial: How to setup a SIEM and honeypot in Azure(Plus a heatmap tracking live Cyber Attacks)</h2>
+            <br>
+            <br>
+            <p>Step 1 - Create free Azure Account and prepare host machine</p>
+            <br>
+            <p>1a. Go to this url <a href="https://azure.microsoft.com/">https://azure.microsoft.com/</a>, and either log in with an existing microsoft account, or create a new one. Enter all of your information, including banking information (for verification/registrations purposes, no fees). Once your registration is completed, go to <a href="https://portal.azure.com">https://portal.azure.com</a>, and log in with your account</p>
+            <img class="post1format" src="./posts/Post2/Step1/1a.png">
+            <p>1b. Before we go further, we will disable any incoming Remote desktop traffic on our actual computer as an added precaution. Press the windows key and R on your keyboard  at the same time, type in SystemPropertiesRemote.exe. From there, uncheck Allow remote connections to this computer, hit apply, then ok.</p>
+            <img class="post1format" src="./posts/Post2/Step1/1b.png">
+            <p>Step 2 - Create a Virtual Machine</p>
+            <br>
+            <p>2a. Before we create the VM(Virtual Machine), we need to create a resource group. Click on or search for the "Resource groups" Application</p>
+            <br>
+            <p>2b. Click on "+ Create" and call it whatever you like. For this lab, I'm going to call mine "Honeypotlab".</p>
+            <img class="post1format" src="./posts/Post2/Step2/2b.png">
+            <p>2c. Click on "Review and Create", then "Create"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2c.png">
+            <p>2d. Now we can create our machine. From the main screen, hover over virtual machines, then click create, then click  "Azure Virtual Machine"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2d.png">
+            <img class="post1format" src="./posts/Post2/Step2/2d1.png">
+            <p>2e. Call the Machine what you want, I'll be calling mine "honeypotvm". Set the security type to "standard" and for the OS image, select either windows 10 or 11  Ill be using windows 10).</p>
+            <img class="post1format" src="./posts/Post2/Step2/2e.png">
+            <p>2f. Leave the size to whatever default option is there, then enter in a username and password for the virtual machine. Make sure to remember these credentials as they will be needed to access the machine later. Afterwards, click on the check box at the bottom, then click the "next" button twice</p>
+            <img class="post1format" src="./posts/Post2/Step2/2f.png">
+            <p>2g. Now we're going to configure the network security to make this VM vulnerable. In the NIC network security group setting , click on " advanced" , then click  "create new"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2g.png">
+            <p>2h. Remove any existing default rules, then check "add new inbound rule"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2h.png">
+            <img class="post1format" src="./posts/Post2/Step2/2h1.png">
+            <p>2i. Configure the inbound rules exactly as you see in the screenshot. Leave action as "allow", and priority "100". You can use whatever name, I'll be calling it DANGER_OPEN". After all that is done, click "add"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2i.png">
+            <p>2j  Afterwards, click done, then "review + create"</p>
+            <img class="post1format" src="./posts/Post2/Step2/2j.png">
+            <img class="post1format" src="./posts/Post2/Step2/2j1.png">
+            <p>2k. After a few seconds, when you're able to, click on "Create" . The deployment will take some time. While we wait, we can multitask and progress to the next step.</p>
+            <img class="post1format" src="./posts/Post2/Step2/2k.png">
+            <br>
+            <p>Step 3 - Create a Log Repository</p>
+            <br>
+            <p>3a. Search for 'Log analytics workspaces in the search bar, and click on it</p>
+            <img class="post1format" src="./posts/Post2/Step3/3a.png">
+            <p>3b. Click on "Create log analytics workspace"</p>
+            <img class="post1format" src="./posts/Post2/Step3/3b.png">
+            <p>3c. Select the resource group you created earlier, and call the log whatever you want. I'm naming mine "honeypot-log". Then after choosing your region, hit "Review + Create", then "Create"</p>
+            <img class="post1format" src="./posts/Post2/Step3/3c.png">
+            <p>3d. Next, we need to enable our security center to gather logs from the virtual machine. To do this, search for "Microsoft Defender for Cloud', or click on it on the right side of the screen.</p>
+            <img class="post1format" src="./posts/Post2/Step3/3d.png">
+            <p>3e. In the left hand bar, under 'Management' click on "Environment settings", then under your subscription , click on the honypot log you just created.</p>
+            <img class="post1format" src="./posts/Post2/Step3/3e.png">
+            <p>3f. Enable servers for the defender plan, but keep SQL disabled, then click "Save"</p>
+            <img class="post1format" src="./posts/Post2/Step3/3f.png">
+            <p>3g. Next, click on "Data Collection", then select  "All events". Then click "Save"</p>
+            <img class="post1format" src="./posts/Post2/Step3/3g.png">
+            <p>3h. Now return to the log analytics workspace, click on you workspace, then search for "Virtual Machines"</p>
+            <p>*** (note that this method is deprecated and will not be supported from august 31st, 2024. This method can be used until august 24th 2024, but it's advised to migrate to "Azure Monitor Agent" )</p>
+            <img class="post1format" src="./posts/Post2/Step3/3h.png">
+            <img class="post1format" src="./posts/Post2/Step3/3h1.png">
+            <p>3i. Click on your honeypot VM, and click "Connect". Now that our log is set up, we can proceed to the next phase</p>
+            <img class="post1format" src="./posts/Post2/Step3/3i.png">
+            <img class="post1format" src="./posts/Post2/Step3/3i1.png">
+            <br>
+            <p>Step 4 - Setup Microsoft Sentinel</p>
+            <br>
+            <p>4a. Search for "Microsoft Sentinel", then from there click on it, and then click "Create Microsoft Sentinel"</p>
+            <img class="post1format" src="./posts/Post2/Step4/4a.png">
+            <img class="post1format" src="./posts/Post2/Step4/4a1.png">
+            <p>4b. Click on your workspace, then click "Add"</p>
+            <img class="post1format" src="./posts/Post2/Step4/4b.png">
+            <br>
+            <p>Step 5 - Accessing and Configuring the VM</p>
+            <br>
+            <p>5a. On your actual computer (assuming you're on windows) open the Remote Desktop Application. Enter the public IP address of your VM in the computer field, and then the username you set earlier. Click connect, then it will ask for the password. Enter the password, then accept the certificate, and let the machine log in. This may take a while depending on the specs used</p>
+            <br>
+            <p>5b. Once you login to the VM for the first time, slide all the options on the screen to "NO and hit accept</p>
+            <img class="post1format" src="./posts/Post2/Step5/5b.png">
+            <p>5c. If asked , enable network discovery, then open edge to begin setting it up, as it will be used later</p>
+            <img class="post1format" src="./posts/Post2/Step5/5c.png">
+            <p>5d. select "start without your data'' when setting up microsoft edge, then click confirm and continue. Uncheck "make edge more fun to you" and then  click confirm. You can now close the edge browser on your VM</p>
+            <img class="post1format" src="./posts/Post2/Step5/5d.png">
+            <p>5e. Lastly, you will need to turn the firewall off on the honeypot vm, to make it an easier target. Search for "wf.msc" in the search bar of the VM, and open it</p>
+            <img class="post1format" src="./posts/Post2/Step5/5e.png">
+            <p>5f. Click on "Windows Defender Firewall Properties" , then go to Domain profile, and turn the firewall off. Do the same for the private and public profiles. Hit apply and ok.</p>
+            <img class="post1format" src="./posts/Post2/Step5/5f.png">
+            <img class="post1format" src="./posts/Post2/Step5/5f1.png">
+            <br>
+            <p>Step 6 - Downloading and Installing Bash Scripts (for Geo-location integration)</p>
+            <br>
+            <p>6a. Download the Script onto the virtual machine by clicking here, then go to https://ipgeolocation.io/  and click "Get free API Access"</p>
+            <img class="post1format" src="./posts/Post2/Step6/6a.png">
+            <p>6b. Register with the website. After you've created and verified your free account, copy the API key on your dashboard, then paste it into the "$API_KEY" field, replacing what's already there.  Save then close the file.</p>
+            <img class="post1format" src="./posts/Post2/Step6/6b.png">
+            <img class="post1format" src="./posts/Post2/Step6/6b1.png">
+            <p>6c. Run the script, then go to "C:/ProgramData/yourfilehere" to open the file output.</p>
+            <img class="post1format" src="./posts/Post2/Step6/6c.png">
+            <p>6d. Copy the output of the script into a text file and save it on your actual computer, not the virtual machine. This will be used later.</p>
+            <img class="post1format" src="./posts/Post2/Step6/6d.png">
+            <br>
+            <p>Step 7 - Integrating custom logs into our Logs analytics workspace</p>
+            <br>
+            <p>7a. Go to log analytics, then go to settings, then "Tables"</p>
+            <img class="post1format" src="./posts/Post2/Step7/7a.png">
+            <p>7b. Click on "Create, then "New custom log (MMA -Based)</p>
+            <img class="post1format" src="./posts/Post2/Step7/7b.png">
+            <p>7c. Select the .txt file with the copied script output from the VM</p>
+            <br>
+            <p>7d. Hit next twice, then at collection paths, enter the url of the output file from the VM, and select "windows" for collection paths. Then hit next</p>
+            <img class="post1format" src="./posts/Post2/Step7/7d.png">
+            <p>7e. Name the log whatever, then click "next", then, "create"</p>
+            <img class="post1format" src="./posts/Post2/Step7/7e.png">
+            <img class="post1format" src="./posts/Post2/Step7/7e1.png">
+            <p>7f. If successful, you should now be able to search for your table by typing the name of the file you created, then hitting run</p>
+            <br>
+            <p>Step 8 - Extracting Data fields from Custom logs</p>
+            <br>
+            <p>8a. Copy the following code into the query scope</p>
+            <img class="post1format" src="./posts/Post2/Step8/8a.png">
+            <br>
+            <p>****INSERT CODE HERE***</p>
+            <br>
+            <p>change the name here to the name of your output file. The raw data should now be organized like it is in the screenshot</p>
+            <br>
+            <p>Step 9 - Setting up the Map in Microsoft Sentinel</p>
+            <br>
+            <p>9a. from the main screen on Azure, search for "Microsoft Sentinel", and select your  honeypot logs</p>
+            <img class="post1format" src="./posts/Post2/Step9/9a.png">
+            <p>9b. From the overview page, under "Threat Management" click on "Workbooks". Then click, "+Add Workbook"</p>
+            <img class="post1format" src="./posts/Post2/Step9/9b.png">
+            <p>9c. Click "Edit" then delete what's already there</p>
+            <img class="post1format" src="./posts/Post2/Step9/9c.png">
+            <img class="post1format" src="./posts/Post2/Step9/9c1.png">
+            <img class="post1format" src="./posts/Post2/Step9/9c2.png">
+            <p>9d. Click Add, then "Add Query", then copy and paste the code below, then hit "Run query"</p>
+            <img class="post1format" src="./posts/Post2/Step9/9d.png">
+            <img class="post1format" src="./posts/Post2/Step9/9d1.png">
+            <p>9e. Click on the Drop down menu for "Visualization" and Select " Map"</p>
+            <br>
+            <p>9f. ensure settings are similar to what you see in the screenshots, then click "apply", and "save and close"</p>
+            <img class="post1format" src="./posts/Post2/Step9/9f.png">
+            <img class="post1format" src="./posts/Post2/Step9/9f1.png">
+            <br>
+            <p>9g. now, as long as your script is running on the VM, you have successfully created and own a live heatmap of attack attempts</p>
+            <br>
+            <br>
+            <img class="post1format" src="./posts/Post2/Step9/9.7.png">
+        
         </div>
         <div id="post3" class="pendingpostformat">
             <h2>Post 3</h2>
