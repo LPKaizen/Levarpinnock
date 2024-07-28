@@ -15,9 +15,9 @@
 
     <nav id="slides" onclick="menuToggle()">
         <ul>
-            <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory Lab</a></li>
+            <li><a onclick="Blogpost1()" href="#post1">How to create an Active Directory lab</a></li>
             <li><a onclick="Blogpost2()" href="#post2">How to setup and run a SIEM and Honeypot VM with Azure</a></li>
-            <li><a onclick="Blogpost3()" href="#post3">How to Create a DNS Sinkhole for your network with a Rasberry Pi Computer Via Pihole</a></li>
+            <li><a onclick="Blogpost3()" href="#post3">How to create a DNS Sinkhole for your network with a Rasberry Pi Computer Via Pihole</a></li>
             <li><a href="../index.html">Return to home page (Exit the Blog)</a></li>
             <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
             <pre>
@@ -459,7 +459,6 @@ ________________________________________________
             <img class="post1format" src="./posts/Post2/Step3/3h.png">
             <img class="post1format" src="./posts/Post2/Step3/3h1.png">
             <p>3i. Click on your honeypot VM, and click "Connect". Now that our log is set up, we can proceed to the next phase</p>
-            <img class="post1format" src="./posts/Post2/Step3/3i.png">
             <img class="post1format" src="./posts/Post2/Step3/3i1.png">
             <br>
             <p>Step 4 - Setup Microsoft Sentinel</p>
@@ -488,7 +487,7 @@ ________________________________________________
             <br>
             <p>Step 6 - Downloading and Installing Bash Scripts (for Geo-location integration)</p>
             <br>
-            <p>6a. Download the Script onto the virtual machine by clicking here, then go to https://ipgeolocation.io/  and click "Get free API Access"</p>
+            <p>6a. Download the Script onto the virtual machine by clicking <a href="https://github.com/LPKaizen/Levarpinnock/releases/download/1.0/Log.Script.zip">here</a>, then go to https://ipgeolocation.io/  and click "Get free API Access"</p>
             <img class="post1format" src="./posts/Post2/Step6/6a.png">
             <p>6b. Register with the website. After you've created and verified your free account, copy the API key on your dashboard, then paste it into the "$API_KEY" field, replacing what's already there.  Save then close the file.</p>
             <img class="post1format" src="./posts/Post2/Step6/6b.png">
@@ -515,10 +514,27 @@ ________________________________________________
             <br>
             <p>Step 8 - Extracting Data fields from Custom logs</p>
             <br>
-            <p>8a. Copy the following code into the query scope</p>
+            <p>8a. Copy the following code into the query scope:</p>
+            <div id="code-container">
+                <pre><code>
+    YourCustomLog_CL
+| project TimeGenerated, RawData
+| extend Latitude = extract(@"latitude:([^,]+)", 1, RawData)
+| extend Longitude = extract(@"longitude:([^,]+)", 1, RawData)
+| extend DestinationHost = extract(@"destinationhost:([^,]+)", 1, RawData)
+| extend UserName = extract(@"username:([^,]+)", 1, RawData)
+| extend SourceHost = extract(@"sourcehost:([^,]+)", 1, RawData)
+| extend State = extract(@"state:([^,]+)", 1, RawData)
+| extend Country = extract(@"country:([^,]+)", 1, RawData)
+| extend Label = extract(@"label:([^,]+)", 1, RawData)
+| extend Timestamp = extract(@"timestamp:([^,]+)", 1, RawData)
+| project TimeGenerated, Latitude, Longitude, DestinationHost, UserName, SourceHost, State, Country, Label, Timestamp
+                </pre></code>
+            </div>
+            <br>
+            <br>
             <img class="post1format" src="./posts/Post2/Step8/8a.png">
             <br>
-            <p>****INSERT CODE HERE***</p>
             <br>
             <p>change the name here to the name of your output file. The raw data should now be organized like it is in the screenshot</p>
             <br>
@@ -533,6 +549,25 @@ ________________________________________________
             <img class="post1format" src="./posts/Post2/Step9/9c1.png">
             <img class="post1format" src="./posts/Post2/Step9/9c2.png">
             <p>9d. Click Add, then "Add Query", then copy and paste the code below, then hit "Run query"</p>
+            <br>
+            <div id="code-container">
+                <pre><code>
+    failedrdp_CL
+| project TimeGenerated, RawData
+| extend Latitude = extract(@"latitude:([^,]+)", 1, RawData)
+| extend Longitude = extract(@"longitude:([^,]+)", 1, RawData)
+| extend DestinationHost = extract(@"destinationhost:([^,]+)", 1, RawData)
+| extend UserName = extract(@"username:([^,]+)", 1, RawData)
+| extend SourceHost = extract(@"sourcehost:([^,]+)", 1, RawData)
+| extend State = extract(@"state:([^,]+)", 1, RawData)
+| extend Country = extract(@"country:([^,]+)", 1, RawData)
+| extend Label = extract(@"label:([^,]+)", 1, RawData)
+| extend Timestamp = extract(@"timestamp:([^,]+)", 1, RawData)
+| project TimeGenerated, Latitude, Longitude, DestinationHost, UserName, SourceHost, State, Country, Label, Timestamp
+                </pre></code>
+            </div>
+            <br>
+            <br>
             <img class="post1format" src="./posts/Post2/Step9/9d.png">
             <img class="post1format" src="./posts/Post2/Step9/9d1.png">
             <p>9e. Click on the Drop down menu for "Visualization" and Select " Map"</p>
