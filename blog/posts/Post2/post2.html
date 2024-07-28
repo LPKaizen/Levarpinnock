@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levar's Blog</title>
+    <link rel='stylesheet' type='text/css' href="../../blog.css">
+</head>
+<body>
+
+    <header>
+        <h1>Levar's Tutorial Blog</h1>
+        <p><span onclick="menuToggle()" class="menubutton">Menu</span></p>
+    </header>
+
+    <nav id="slides" onclick="menuToggle()">
+        <ul>
+            <li><a onclick="Blogpost1()" href="../Post1/post1.html">How to create an Active Directory lab</a></li>
+            <li><a onclick="Blogpost2()" href="./post2.html">How to setup and run a SIEM and Honeypot VM with Azure</a></li>
+            <li><a onclick="Blogpost3()" href="#post3">How to create a DNS Sinkhole for your network with a Rasberry Pi Computer Via Pihole</a></li>
+            <li><a href="../index.html">Return to home page (Exit the Blog)</a></li>
+            <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
+            <pre>
+________________________________________________
+______¶_________________________________________
+____1¶¶1________________________________________
+_____¶¶¶1_______________________________________
+______1¶¶¶¶¶¶11_______________1111______________
+__________1¶¶¶¶¶¶¶¶1_________¶¶¶¶¶¶_____________
+______________11¶¶¶¶¶¶¶1¶1__¶¶¶¶¶¶¶1____________
+_________________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_____________
+__________________11¶¶¶¶¶¶¶¶¶¶¶¶¶¶______________
+______________________¶¶¶¶¶¶¶¶¶¶¶¶¶_____________
+______________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___________
+_____________________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+_____________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1_____
+_________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__1¶¶1¶¶¶¶¶¶1__
+________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1__111¶¶1_
+_______________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1¶¶¶¶1_________
+_____________¶¶¶¶¶_1¶¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶__________
+____________¶¶¶¶¶_____1111¶¶11___¶¶¶¶1__________
+__________¶¶¶¶¶¶1______________1¶¶¶¶¶1__________
+________1¶¶¶¶¶¶1______________¶¶¶¶¶¶¶1__________
+____¶¶1¶¶¶¶¶¶¶1_111111111_____1¶¶¶¶¶¶___________
+____1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1__________
+______11¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1___________
+__________1¶1_______________1¶1_________________
+___________¶1________________¶1_________________
+________________________________________________
+________________________________________________
+            </pre>
+        </ul>
+    </nav>
+
+    <div onclick="menuClose()" class="content">
+        <div id="post2" class="postformat">
+            <h2>Tutorial: How to setup a SIEM and honeypot in Azure(Plus a heatmap tracking live Cyber Attacks)</h2>
+            <br>
+            <br>
+            <p>Step 1 - Create free Azure Account and prepare host machine</p>
+            <br>
+            <p>1a. Go to this url <a href="https://azure.microsoft.com/">https://azure.microsoft.com/</a>, and either log in with an existing microsoft account, or create a new one. Enter all of your information, including banking information (for verification/registrations purposes, no fees). Once your registration is completed, go to <a href="https://portal.azure.com">https://portal.azure.com</a>, and log in with your account</p>
+            <img class="post1format" src="./Step1/1a.png">
+            <p>1b. Before we go further, we will disable any incoming Remote desktop traffic on our actual computer as an added precaution. Press the windows key and R on your keyboard  at the same time, type in SystemPropertiesRemote.exe. From there, uncheck Allow remote connections to this computer, hit apply, then ok.</p>
+            <img class="post1format" src="./Step1/1b.png">
+            <p>Step 2 - Create a Virtual Machine</p>
+            <br>
+            <p>2a. Before we create the VM(Virtual Machine), we need to create a resource group. Click on or search for the "Resource groups" Application</p>
+            <br>
+            <p>2b. Click on "+ Create" and call it whatever you like. For this lab, I'm going to call mine "Honeypotlab".</p>
+            <img class="post1format" src="./Step2/2b.png">
+            <p>2c. Click on "Review and Create", then "Create"</p>
+            <img class="post1format" src="./Step2/2c.png">
+            <p>2d. Now we can create our machine. From the main screen, hover over virtual machines, then click create, then click  "Azure Virtual Machine"</p>
+            <img class="post1format" src="./Step2/2d.png">
+            <img class="post1format" src="./Step2/2d1.png">
+            <p>2e. Call the Machine what you want, I'll be calling mine "honeypotvm". Set the security type to "standard" and for the OS image, select either windows 10 or 11  Ill be using windows 10).</p>
+            <img class="post1format" src="./Step2/2e.png">
+            <p>2f. Leave the size to whatever default option is there, then enter in a username and password for the virtual machine. Make sure to remember these credentials as they will be needed to access the machine later. Afterwards, click on the check box at the bottom, then click the "next" button twice</p>
+            <img class="post1format" src="./Step2/2f.png">
+            <p>2g. Now we're going to configure the network security to make this VM vulnerable. In the NIC network security group setting , click on " advanced" , then click  "create new"</p>
+            <img class="post1format" src="./Step2/2g.png">
+            <p>2h. Remove any existing default rules, then check "add new inbound rule"</p>
+            <img class="post1format" src="./Step2/2h.png">
+            <img class="post1format" src="./Step2/2h1.png">
+            <p>2i. Configure the inbound rules exactly as you see in the screenshot. Leave action as "allow", and priority "100". You can use whatever name, I'll be calling it DANGER_OPEN". After all that is done, click "add"</p>
+            <img class="post1format" src="./Step2/2i.png">
+            <p>2j  Afterwards, click done, then "review + create"</p>
+            <img class="post1format" src="./Step2/2j.png">
+            <img class="post1format" src="./Step2/2j1.png">
+            <p>2k. After a few seconds, when you're able to, click on "Create" . The deployment will take some time. While we wait, we can multitask and progress to the next step.</p>
+            <img class="post1format" src="./Step2/2k.png">
+            <br>
+            <p>Step 3 - Create a Log Repository</p>
+            <br>
+            <p>3a. Search for 'Log analytics workspaces in the search bar, and click on it</p>
+            <img class="post1format" src="./Step3/3a.png">
+            <p>3b. Click on "Create log analytics workspace"</p>
+            <img class="post1format" src="./Step3/3b.png">
+            <p>3c. Select the resource group you created earlier, and call the log whatever you want. I'm naming mine "honeypot-log". Then after choosing your region, hit "Review + Create", then "Create"</p>
+            <img class="post1format" src="./Step3/3c.png">
+            <p>3d. Next, we need to enable our security center to gather logs from the virtual machine. To do this, search for "Microsoft Defender for Cloud', or click on it on the right side of the screen.</p>
+            <img class="post1format" src="./Step3/3d.png">
+            <p>3e. In the left hand bar, under 'Management' click on "Environment settings", then under your subscription , click on the honypot log you just created.</p>
+            <img class="post1format" src="./Step3/3e.png">
+            <p>3f. Enable servers for the defender plan, but keep SQL disabled, then click "Save"</p>
+            <img class="post1format" src="./Step3/3f.png">
+            <p>3g. Next, click on "Data Collection", then select  "All events". Then click "Save"</p>
+            <img class="post1format" src="./Step3/3g.png">
+            <p>3h. Now return to the log analytics workspace, click on you workspace, then search for "Virtual Machines"</p>
+            <p>*** (note that this method is deprecated and will not be supported from august 31st, 2024. This method can be used until august 24th 2024, but it's advised to migrate to "Azure Monitor Agent" )</p>
+            <img class="post1format" src="./Step3/3h.png">
+            <img class="post1format" src="./Step3/3h1.png">
+            <p>3i. Click on your honeypot VM, and click "Connect". Now that our log is set up, we can proceed to the next phase</p>
+            <img class="post1format" src="./Step3/3i1.png">
+            <br>
+            <p>Step 4 - Setup Microsoft Sentinel</p>
+            <br>
+            <p>4a. Search for "Microsoft Sentinel", then from there click on it, and then click "Create Microsoft Sentinel"</p>
+            <img class="post1format" src="./Step4/4a.png">
+            <img class="post1format" src="./Step4/4a1.png">
+            <p>4b. Click on your workspace, then click "Add"</p>
+            <img class="post1format" src="./Step4/4b.png">
+            <br>
+            <p>Step 5 - Accessing and Configuring the VM</p>
+            <br>
+            <p>5a. On your actual computer (assuming you're on windows) open the Remote Desktop Application. Enter the public IP address of your VM in the computer field, and then the username you set earlier. Click connect, then it will ask for the password. Enter the password, then accept the certificate, and let the machine log in. This may take a while depending on the specs used</p>
+            <br>
+            <p>5b. Once you login to the VM for the first time, slide all the options on the screen to "NO and hit accept</p>
+            <img class="post1format" src="./Step5/5b.png">
+            <p>5c. If asked , enable network discovery, then open edge to begin setting it up, as it will be used later</p>
+            <img class="post1format" src="./Step5/5c.png">
+            <p>5d. select "start without your data'' when setting up microsoft edge, then click confirm and continue. Uncheck "make edge more fun to you" and then  click confirm. You can now close the edge browser on your VM</p>
+            <img class="post1format" src="./Step5/5d.png">
+            <p>5e. Lastly, you will need to turn the firewall off on the honeypot vm, to make it an easier target. Search for "wf.msc" in the search bar of the VM, and open it</p>
+            <img class="post1format" src="./Step5/5e.png">
+            <p>5f. Click on "Windows Defender Firewall Properties" , then go to Domain profile, and turn the firewall off. Do the same for the private and public profiles. Hit apply and ok.</p>
+            <img class="post1format" src="./Step5/5f.png">
+            <img class="post1format" src="./Step5/5f1.png">
+            <br>
+            <p>Step 6 - Downloading and Installing Bash Scripts (for Geo-location integration)</p>
+            <br>
+            <p>6a. Download the Script onto the virtual machine by clicking <a href="https://github.com/LPKaizen/Levarpinnock/releases/download/1.0/Log.Script.zip">here</a>, then go to https://ipgeolocation.io/  and click "Get free API Access"</p>
+            <img class="post1format" src="./Step6/6a.png">
+            <p>6b. Register with the website. After you've created and verified your free account, copy the API key on your dashboard, then paste it into the "$API_KEY" field, replacing what's already there.  Save then close the file.</p>
+            <img class="post1format" src="./Step6/6b.png">
+            <img class="post1format" src="./Step6/6b1.png">
+            <p>6c. Run the script, then go to "C:/ProgramData/yourfilehere" to open the file output.</p>
+            <img class="post1format" src="./Step6/6c.png">
+            <p>6d. Copy the output of the script into a text file and save it on your actual computer, not the virtual machine. This will be used later.</p>
+            <img class="post1format" src="./Step6/6d.png">
+            <br>
+            <p>Step 7 - Integrating custom logs into our Logs analytics workspace</p>
+            <br>
+            <p>7a. Go to log analytics, then go to settings, then "Tables"</p>
+            <img class="post1format" src="./Step7/7a.png">
+            <p>7b. Click on "Create, then "New custom log (MMA -Based)</p>
+            <img class="post1format" src="./Step7/7b.png">
+            <p>7c. Select the .txt file with the copied script output from the VM</p>
+            <br>
+            <p>7d. Hit next twice, then at collection paths, enter the url of the output file from the VM, and select "windows" for collection paths. Then hit next</p>
+            <img class="post1format" src="./Step7/7d.png">
+            <p>7e. Name the log whatever, then click "next", then, "create"</p>
+            <img class="post1format" src="./Step7/7e.png">
+            <img class="post1format" src="./Step7/7e1.png">
+            <p>7f. If successful, you should now be able to search for your table by typing the name of the file you created, then hitting run</p>
+            <br>
+            <p>Step 8 - Extracting Data fields from Custom logs</p>
+            <br>
+            <p>8a. Copy the following code into the query scope:</p>
+            <div id="code-container">
+                <pre><code>
+    YourCustomLog_CL
+| project TimeGenerated, RawData
+| extend Latitude = extract(@"latitude:([^,]+)", 1, RawData)
+| extend Longitude = extract(@"longitude:([^,]+)", 1, RawData)
+| extend DestinationHost = extract(@"destinationhost:([^,]+)", 1, RawData)
+| extend UserName = extract(@"username:([^,]+)", 1, RawData)
+| extend SourceHost = extract(@"sourcehost:([^,]+)", 1, RawData)
+| extend State = extract(@"state:([^,]+)", 1, RawData)
+| extend Country = extract(@"country:([^,]+)", 1, RawData)
+| extend Label = extract(@"label:([^,]+)", 1, RawData)
+| extend Timestamp = extract(@"timestamp:([^,]+)", 1, RawData)
+| project TimeGenerated, Latitude, Longitude, DestinationHost, UserName, SourceHost, State, Country, Label, Timestamp
+                </pre></code>
+            </div>
+            <br>
+            <br>
+            <img class="post1format" src="./Step8/8a.png">
+            <br>
+            <br>
+            <p>change the name here to the name of your output file. The raw data should now be organized like it is in the screenshot</p>
+            <br>
+            <p>Step 9 - Setting up the Map in Microsoft Sentinel</p>
+            <br>
+            <p>9a. from the main screen on Azure, search for "Microsoft Sentinel", and select your  honeypot logs</p>
+            <img class="post1format" src="./Step9/9a.png">
+            <p>9b. From the overview page, under "Threat Management" click on "Workbooks". Then click, "+Add Workbook"</p>
+            <img class="post1format" src="./Step9/9b.png">
+            <p>9c. Click "Edit" then delete what's already there</p>
+            <img class="post1format" src="./Step9/9c.png">
+            <img class="post1format" src="./Step9/9c1.png">
+            <img class="post1format" src="./Step9/9c2.png">
+            <p>9d. Click Add, then "Add Query", then copy and paste the code below, then hit "Run query"</p>
+            <br>
+            <div id="code-container">
+                <pre><code>
+    failedrdp_CL
+| project TimeGenerated, RawData
+| extend Latitude = extract(@"latitude:([^,]+)", 1, RawData)
+| extend Longitude = extract(@"longitude:([^,]+)", 1, RawData)
+| extend DestinationHost = extract(@"destinationhost:([^,]+)", 1, RawData)
+| extend UserName = extract(@"username:([^,]+)", 1, RawData)
+| extend SourceHost = extract(@"sourcehost:([^,]+)", 1, RawData)
+| extend State = extract(@"state:([^,]+)", 1, RawData)
+| extend Country = extract(@"country:([^,]+)", 1, RawData)
+| extend Label = extract(@"label:([^,]+)", 1, RawData)
+| extend Timestamp = extract(@"timestamp:([^,]+)", 1, RawData)
+| project TimeGenerated, Latitude, Longitude, DestinationHost, UserName, SourceHost, State, Country, Label, Timestamp
+                </pre></code>
+            </div>
+            <br>
+            <br>
+            <img class="post1format" src="./Step9/9d.png">
+            <img class="post1format" src="./Step9/9d1.png">
+            <p>9e. Click on the Drop down menu for "Visualization" and Select " Map"</p>
+            <br>
+            <p>9f. ensure settings are similar to what you see in the screenshots, then click "apply", and "save and close"</p>
+            <img class="post1format" src="./Step9/9f.png">
+            <img class="post1format" src="./Step9/9f1.png">
+            <br>
+            <p>9g. now, as long as your script is running on the VM, you have successfully created and own a live heatmap of attack attempts</p>
+            <br>
+            <br>
+            <img class="post1format" src="./Step9/9.7.png">
+        
+        </div>
+        <div id="post3" class="pendingpostformat">
+            <h2>Post 3</h2>
+            <h1 style="color: white;">Coming Soon!</h1>
+        </div>
+    </div>
+    <!--beginning of javscript-->
+    <script src="../../blog.js">
+    </script>
+    <!--End of JavaScript-->
+</body>
+</html>

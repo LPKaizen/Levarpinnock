@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levar's Blog</title>
+    <link rel='stylesheet' type='text/css' href="../../blog.css">
+</head>
+<body>
+
+    <header>
+        <h1>Levar's Tutorial Blog</h1>
+        <p><span onclick="menuToggle()" class="menubutton">Menu</span></p>
+    </header>
+
+    <nav id="slides" onclick="menuToggle()">
+        <ul>
+            <li><a href="./post1.html">How to create an Active Directory lab</a></li>
+            <li><a href="../Post2/post2.html">How to setup and run a SIEM and Honeypot VM with Azure</a></li>
+            <li><a href="#post3">How to create a DNS Sinkhole for your network with a Rasberry Pi Computer Via Pihole</a></li>
+            <li><a href="../index.html">Return to home page (Exit the Blog)</a></li>
+            <li><a>~~~~~~~~~Close Menu~~~~~~~~~</a></li>
+            <pre>
+________________________________________________
+______¶_________________________________________
+____1¶¶1________________________________________
+_____¶¶¶1_______________________________________
+______1¶¶¶¶¶¶11_______________1111______________
+__________1¶¶¶¶¶¶¶¶1_________¶¶¶¶¶¶_____________
+______________11¶¶¶¶¶¶¶1¶1__¶¶¶¶¶¶¶1____________
+_________________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_____________
+__________________11¶¶¶¶¶¶¶¶¶¶¶¶¶¶______________
+______________________¶¶¶¶¶¶¶¶¶¶¶¶¶_____________
+______________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___________
+_____________________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+_____________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1_____
+_________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__1¶¶1¶¶¶¶¶¶1__
+________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1__111¶¶1_
+_______________1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_________
+______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1¶¶¶¶1_________
+_____________¶¶¶¶¶_1¶¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶__________
+____________¶¶¶¶¶_____1111¶¶11___¶¶¶¶1__________
+__________¶¶¶¶¶¶1______________1¶¶¶¶¶1__________
+________1¶¶¶¶¶¶1______________¶¶¶¶¶¶¶1__________
+____¶¶1¶¶¶¶¶¶¶1_111111111_____1¶¶¶¶¶¶___________
+____1¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1__________
+______11¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶1___________
+__________1¶1_______________1¶1_________________
+___________¶1________________¶1_________________
+________________________________________________
+________________________________________________
+            </pre>
+        </ul>
+    </nav>
+
+    <div onclick="menuClose()" class="content">
+        <div id="post1" class="postformat">
+            <h2>Tutorial: How to create an Active Directory Lab</h2>
+            <p>In this blog post, I'm going to show you step by step how to create your own virtual windows active directory. By the end of this post you will have built a functioning active directory network, complete
+                with a fully configured virtual windows Server, networked together with two virtual client machines! You will 
+                also generate one thousand fake users on this active directory, to simulate managing a large company</p>
+            <br>
+            <p>NOTE: This tutorial assumes you're doing this lab on on windows. If not, skip all of step 3. With that out of the way, lets get started!</p>
+            <br>
+            <br>
+            <p>1.First we're going to download all of our tools, starting with our hypervisor. Download Virtual box by visiting <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a>, then click on the "Window hosts" version to start the download</p>
+            <img class="post1format" src="./images/step 1 and 2/Step 1.png">
+            <p>2. Next, we're going to grab our ISO file for our server. Download Windows Server 2019 by going here -> <a href="http://www.microsoft.com/en-us/evalcenter/download-windows-server-2019" target="_blank">http://www.microsoft.com/en-us/evalcenter/download-windows-server-2019</a>, and select the english 64-bit version</p>
+            <img class="post1format" src="./images/step 1 and 2/Step 2.png">">
+            <p>3. Now we're going to aquire our host image ISO. In order to do this, we first need to download the Windows Media Creation tool, which will create the ISO we need.
+                Visit <a href="https://www.microsoft.com/en-ca/software-download/windows10" target="_blank">https://www.microsoft.com/en-ca/software-download/windows10</a>, and click on 'download tool now'
+            </p>
+            <img class="post1format" src="./images/Step 3/Step 3.png">
+            <p>3a. Scroll to the bottom and click accept</p>
+            <img class="post1format" src="./images/Step 3/Step 3a.png">
+            <p>3b. Select "Create installation media" and click next</p>
+            <img class="post1format" src="./images/Step 3/Step 3b.png">
+            <p>3c. Select your language > Windows 10 > 64 bit, then click next</p>
+            <img class="post1format" src="./images/Step 3/Step 3c.png">
+            <p>3d. Select ISO file and click next</p>
+            <img class="post1format" src="./images/Step 3/Step 3d.png">
+            <p>3e. Choose where you want to save your iso file on your computer, and click save</p>
+            <img class="post1format" src="./images/Step 3/3e.png">
+            <p>3f. Click finish when the tool completes the download and creation of the media</p>
+            <br>
+            <p>4. Install and Configure Virtualbox</p>
+            <br>
+            <p>Installation of virtual Box is pretty straight forward. Just double-click the executable and follow through the steps, default options are ok. If you want more direct instructions from the virtual box website, <a href="https://www.virtualbox.org/manual/ch02.html#install-win-performing" target="_blank">click here</a></p>
+            <br>
+            <p>****Configure new Windows Server VM****</p>
+            <br>
+            <br>
+            <p>5. Now we're going to create and configure our Windows server virtual machine. To begin, Go to the machine > create new</p>
+            <img class="post1format" src="./images/Step 5/5.png">
+            <p>5a. For name and operating system, pick any name you want, select the windows server 2019 iso you downloaded earlier, and choose which folder you want your vm to be saved in. You can use the default folder if there is enough space</p>
+            <p>*special note* Sometimes if you do this, the machine error loops during the installation. If that happens, leave this field blank "<not selected>" , then when you finish configuring the machine, go into its settings, and in the cd media, browse to the iso file and hit ok. then boot up the machine**</p>
+            <img class="post1format" src="./images/Step 5/5a.png">
+            <p>5b. Leave everything else as is. Don't worry about guest additions now, we will install those later as an optional but recommended installation step for ease of use</p>
+            <img class="post1format" src="./images/Step 5/5b.png">
+            <p>5c. Choose your ram and number of cpu cores. Use what you have and be aware of your available resources. 4gbs of ram +  2 to 4 cpus is good enough!!</p>
+            <img class="post1format" src="./images/Step 5/5c.png">
+            <p>5d. Create a storage device, 20 gbs is more than enough for this machine</p>
+            <img class="post1format" src="./images/Step 5/5d.png">
+            <p>5e. Click ok, then go to the settings (yellow gear icon)</p>
+            <img class="post1format" src="./images/Step 5/5e.png">
+            <p>5f. Go to advanced, then change shared clipboard and Drag 'n' drop to 'bidirectional'</p>
+            <img class="post1format" src="./images/Step 5/5f.png">
+            <p>5g. Go to network, then adapter 2, and enable network adapter. make sure to choose attached to the internal network on the drop-down menu. then click ok</p>
+            <img class="post1format" src="./images/Step 5/5g.png">
+            <p>5h. Click on the Storage icon, then click the CD in the storage device.</p>
+            <br>
+            <p>5i. Click on the blue CD icon, then select the Image file you downloaded earlier, and click ok</p>
+            <img class="post1format" src="./images/Step 5/5i.png">
+            <br>
+            <p>6. Start the machine</p>
+            <img class="post1format" src="./images/Step 6/6.png">
+            <p>6.a Select your language and keyboard method and click next. in the next window, click "install now"</p>
+            <img class="post1format" src="./images/Step 6/6a.png">
+            <img class="post1format" src="./images/Step 6/6a1.png">
+            <p>6b. Select the "standard evaluation with desktop mode" option and click next</p>
+            <img class="post1format" src="./images/Step 6/6b.png">
+            <p>6c. Check the box beside "accept the license terms" , and then click next</p>
+            <img class="post1format" src="./images/Step 6/6c.png">
+            <p>6d . Select "install windows only" option</p>
+            <img class="post1format" src="./images/Step 6/6d.png">
+            <p>6e. Select the harddrive, then click next</p>
+            <img class="post1format" src="./images/Step 6/6e.png">
+            <p>**At this point, the installer will take awhile to install windows and will reboot the PC. DO NOT TOUCH ANYTHING until the computer fully reboots and automatically returns to the installation process.</p>
+            <br>
+            <p>7.  Configure Windows - pick a password and click finish</p>
+            <img class="post1format" src="./images/Step 7/7.png">
+            <p>7a. To click Ctrl+Alt+Del in the virtual machine, select it from the VM menu, then enter the password you picked earlier</p>
+            <img class="post1format" src="./images/Step 7/7a.png">
+            <p>7b. Click yes on allowing your PC to be discoverable</p>
+            <br>
+            <p>****Bonus*** Guest additions installation</p>
+            <br>
+            <p>8. In the VM menu, click devices, and then "insert Guest Additions CD image"</p>
+            <img class="post1format" src="./images/Step 8/8.png">
+            <p>8a. Go to File explorer >  This PC > then double click the CD drive with the virtual box guest additions mounted on it</p>
+            <img class="post1format" src="./images/Step 8/8a.png">
+            <img class="post1format" src="./images/Step 8/8a1.png">
+            <p>8b. Double click "VBWindowsAdditions-amd64"</p>
+            <img class="post1format" src="./images/Step 8/8b.png">
+            <p>8c. Click next, next again, and then install</p>
+            <img class="post1format" src="./images/Step 8/8c.png">
+            <img class="post1format" src="./images/Step 8/8c1.png">
+            <img class="post1format" src="./images/Step 8/8c2.png">
+            <p>8d. Select Reboot now **if you get errors after rebooting, retry step 8 from the beginning, but this time choose reboot later instead of reboot now, then start the machine from the VM program.</p>
+            <img class="post1format" src="./images/Step 8/8d.png">
+            <p>**If everything is installed correctly, you should now be able to resize the window, and the UI of the VM will be responsive and fast, just like a normal PC.</p>
+            <br>
+            <p>****Configure networking****</p>
+            <br>
+            <p>This next step will help us determine which of the two network interfaces is the local one, and which is connected to the internet. the interface connected to the internet will have a normal IP address like 10.X.X.X. the other one will not. Once you determine which one is which by following the steps below, you can name them appropriately to make things easier for us later</p>
+            <br>
+            <p>9. Click on network icon in the tray, then the network</p>
+            <img class="post1format" src="./images/Step 9/9.png">
+            <p>9a Click on " Change adapter settings"</p>
+            <img class="post1format" src="./images/Step 9/9a.png">
+            <p>9b. Right click the first adapter and select " status"</p>
+            <img class="post1format" src="./images/Step 9/9b.png">
+            <p>9c. Click "Details"</p>
+            <img class="post1format" src="./images/Step 9/9c.png">
+            <p>9d. Check the IP address, and determine if it's the internet interface or the network interface. Remember, the interface connected to the internet will likely have a normal ipv4 address like 10.X.X.X, the local interface will likely have an auto-assigned address like 169.X.X.X. In this case, this one is the interface connected to the internet. Another hint that can help you tell which interface is the local one, is the lack of packets being received, due to it being unconfigured</p>
+            <img class="post1format" src="./images/Step 9/9d.png">
+            <img class="post1format" src="./images/Step 9/9d1.png">
+            <p>9e. Once you've determined which one is which, label them by right clicking each interface and selecting "Rename"</p>
+            <img class="post1format" src="./images/Step 9/9e.png">
+            <img class="post1format" src="./images/Step 9/9e1.png">
+            <img class="post1format" src="./images/Step 9/9e2.png">
+            <br>
+            <p>****assigning ip addressing to the internal network interface****</p>
+            <br>
+            <p>10. Next we're going to manually configure the internal network interface. right click on the internal interface, and select properties. Then click internet protocol version 4, and then properties</p>
+            <img class="post1format" src="./images/Step 10/10.png">
+            <p>10a. Enter an appropriate ip address as seen in the screenshot, in this case ,we will use 172.16.0.1 with a 255.255.255.0 subnet address. The DNS will be 127.0.0.1, since it will be the host device that will resolve addresses for us. Click ok when everything is entered in</p>
+            <img class="post1format" src="./images/Step 10/10a.png">
+            <p>10b. To rename computer, right-click the windows icon, click system, scroll down and then click "rename PC"</p>
+            <img class="post1format" src="./images/Step 10/10b.png">
+            <img class="post1format" src="./images/Step 10/10b1.png">
+            <p>10c. Choose your name, click next, then restart now (just hit continue when/if asked for shutdown reason)</p>
+            <img class="post1format" src="./images/Step 10/10c.png">
+            <img class="post1format" src="./images/Step 10/10c1.png">
+            <img class="post1format" src="./images/Step 10/10c2.png">
+            <br>
+            <p>****Install windows server and configure components</p>
+            <br>
+            <p>11. Go to the Server Manager program on your PC, and on the main page, click on "Add Roles and Features"</p>
+            <img class="post1format" src="./images/Step 11/11.png">
+            <p>11b. Click next three times, and at the server roles section, select "Active Directory Domain Services". Click "add features" in the next window, then click next.</p>
+            <img class="post1format" src="./images/Step 11/11b.png">
+            <img class="post1format" src="./images/Step 11/11b1.png">
+            <img class="post1format" src="./images/Step 11/11b2.png">
+            <img class="post1format" src="./images/Step 11/11b3.png">
+            <img class="post1format" src="./images/Step 11/11b4.png">
+            <img class="post1format" src="./images/Step 11/11b5.png">
+            <p>11c. Hit next 2 more times, then click install.  The installation will take some time. Be patient. click close once the installation completes</p>
+            <img class="post1format" src="./images/Step 11/11c.png">
+            <img class="post1format" src="./images/Step 11/11c1.png">
+            <img class="post1format" src="./images/Step 11/11c2.png">
+            <img class="post1format" src="./images/Step 11/11c3.png">
+            <br>
+            <p>****Configuring Domain Server****</p>
+            <br>
+            <p>12. In the Server manager main page, click on the yellow flag, then click on " Promote this server to a domain server"</p>
+            <img class="post1format" src="./images/Step 12/12.png">
+            <img class="post1format" src="./images/Step 12/121.png">
+            <p>12a. Choose add new forest, then type in a Domain name. In this case, I choose "mydomain.com". click next afterwards</p>
+            <img class="post1format" src="./images/Step 12/12a.png">
+            <p>12b. We won't be using this for the lab, but it is required for setting up the domain controller. in the directory services restore password (DSRM) section, choose any password here that you want, then keep clicking next until you get to the final "results" tab, then click install</p>
+            <img class="post1format" src="./images/Step 12/12b.png">
+            <img class="post1format" src="./images/Step 12/12b1.png">
+            <img class="post1format" src="./images/Step 12/12b2.png">
+            <img class="post1format" src="./images/Step 12/12b3.png">
+            <img class="post1format" src="./images/Step 12/12b4.png">
+            <img class="post1format" src="./images/Step 12/12b5.png">
+            <p>12c. Allow the PC to restart</p>
+            <br>
+            <p>****Setting up Admin Account****</p>
+            <br>
+            <p>13. Open the start menu, and open active Directory Users and Computers</p>
+            <img class="post1format" src="./images/Step 13/13.png">
+            <p>13a. right-click on your newly created domain on the left column, and hover over "new" then click on "Organizational Unit"</p>
+            <img class="post1format" src="./images/Step 13/13a.png">
+            <p>13b. This will be our admin org, you can call it whatever you want, but I will be using "_ADMINS". For the purpose of this lab, uncheck "Protect container from accidental deletion". **NOTE**in real-world work environments, you should always leave this option checked**. Then click ok</p>
+            <br>
+            <p>13c. Now, right click on your newly created org, and select "new", and "new user"</p>
+            <img class="post1format" src="./images/Step 13/13c.png">
+            <p>13d. Enter your name in the fields, with whatever username you want (you will need to remember this password, do not forget it). In this case, I'll use</p>
+            <p>"a-lpinnock". "a" is for "Admin" followed by a dash- and my first initial and second name.</p>
+            <img class="post1format" src="./images/Step 13/13d.png">
+            <p>13e. Choose your password, and for this lab, uncheck "User must change password on next logon" and check" Password never expires", then click next and finish</p>
+            <img class="post1format" src="./images/Step 13/13e.png">
+            <img class="post1format" src="./images/Step 13/13e1.png">
+            <p>13f. now click on your admin org, and right click on your newly created user, and click "Properties"</p>
+            <img class="post1format" src="./images/Step 13/13f.png">
+            <p>13g. Click on the "Member of" Tab, then click on add</p>
+            <img class="post1format" src="./images/Step 13/13g.png">
+            <p>13h. Type in "Domain Admins" in the object names field, click "check names" then click ok</p>
+            <img class="post1format" src="./images/Step 13/13h.png">
+            <p>13i. Click apply and Ok. then sign out of the machine, do not shutdown</p>
+            <img class="post1format" src="./images/Step 13/13i.png">
+            <img class="post1format" src="./images/Step 13/13i1.png">
+            <p>13j. Click on "Other User" and then enter in the user you created earlier, along with the password you picked for this user</p>
+            <img class="post1format" src="./images/Step 13/13j.png">
+            <br>
+            <p>****install and configure network traffic routing****</p>
+            <br>
+            <p>14. Go to the Server Manager, and click on add new roles and features</p>
+            <img class="post1format" src="./images/Step 14/14.png">
+            <p>14a. Click next, next , next, then select "Remote Access" From the List., then hit next 3 times</p>
+            <img class="post1format" src="./images/Step 14/14a.png">
+            <p>14b. On the "Role Services" section, check "Routing", then click, "add Features", then click next 3 times, then install</p>
+            <img class="post1format" src="./images/Step 14/14b.png">
+            <img class="post1format" src="./images/Step 14/14b1.png">
+            <img class="post1format" src="./images/Step 14/14b2.png">
+            <p>14c. While this installs, you can hit close and the installation will continue uninterrupted, or wait until it's done and close this window</p>
+            <img class="post1format" src="./images/Step 14/14c.png">
+            <p>14d. Go to the Server manager, and click tools, then select "routing and remote access"</p>
+            <img class="post1format" src="./images/Step 14/14d.png">
+            <p>14e. Right click on your domain controller, and select "Configure and Enable Routing and Remote Access"</p>
+            <img class="post1format" src="./images/Step 14/14e.png">
+            <p>14f. Click next, the select "Network address Translation, then hit next</p>
+            <img class="post1format" src="./images/Step 14/14f.png">
+            <img class="post1format" src="./images/Step 14/14f1.png">
+            <p>14g. Select the Interface you labeled as "Internet" as this will link your network to the internet. Then hit finish</p>
+            <img class="post1format" src="./images/Step 14/14g.png">
+            <img class="post1format" src="./images/Step 14/14g1.png">
+            <p>***Sometimes with virtualization, the option to select network interfaces is greyed out. This is an error that can be solved by simply closing the window, and repeating step number 14d  - 14g****</p>
+            <br>
+            <p>****Installing DHCP Server****</p>
+            <br>
+            <p>15. Go to server Manager, and click add roles and features. From here, hit next 3 times, and in the "Features" section ,select "DHCP Server", then click ldblquote add Features. Click next 3 times, then click install. When the installation closes, hit close</p>
+            <img class="post1format" src="./images/step 15/15.png">
+            <p>15a. Now go to tools, and hit DHCP</p>
+            <img class="post1format" src="./images/step 15/15a.png">
+            <p>15b. Click on the domain you created, right click on IPV4, then select, "New Scope"</p>
+            <img class="post1format" src="./images/step 15/15b.png">
+            <p>15c. Click next, then name your scope. For ease of use, I will use the Gateway address(the ip address assigned to our internal interface) plus the address range, which will be 172.16.0.100-200. then click next</p>
+            <img class="post1format" src="./images/step 15/15c.png">
+            <img class="post1format" src="./images/step 15/15c1.png">
+            <p>15d. Next you put in the ip range and subnet mask, as shown in the screenshot, then click next 4 times</p>
+            <img class="post1format" src="./images/step 15/15d.png">
+            <p>15e.Enter the Domain name server address(the internal network interface ip address), 172.16.0.1, and click "add", then next 4 times, then finish</p>
+            <img class="post1format" src="./images/step 15/15e.png">
+            <p>15f. Right click on your domain the the DHCP settings and click "authorize". Click refresh in the same menu to see if the setting have worked, which will be represented as two green checkmarks on IPV4 and IPV6</p>
+            <img class="post1format" src="./images/step 15/15f.png">
+            <img class="post1format" src="./images/step 15/15f1.png">
+            <img class="post1format" src="./images/step 15/15f2.png">
+            <br>
+            <p>Bonus****Creating new users using powershell - Preping the system for running the script****</p>
+            <p>Using a powershell script we are going to add one thousand new users. You don't need to use powershell and can add however many users you want manually, but this will serve to simulate a more realistic environment.</p>
+            <br>
+            <p>16. **This step is only for the purpose of this lab, and should not be done in regular production environments as it hinders security, allowing anyone to download things directly to the server via web browsing***</p>
+            <p>Click on "Configure this Server" then click on "IE enhanced Security Configuration"</p>
+            <img class="post1format" src="./images/Step 16/16.png">
+            <img class="post1format" src="./images/Step 16/161.png">
+            <p>16a. Click "off" for both settings. This will allow us to browse the internet on the server PC, as well as not annoyingly spam us with warning messages during the next few steps. Afterwards click ok</p>
+            <img class="post1format" src="./images/Step 16/16a.png">
+            <p>16b.To download the script, <a href="https://github.com/LPKaizen/Levarpinnock/releases/download/1.0/Scripts.zip">click here</a>, then extract the folder to your desktop for ease of use</p>
+            <br>
+            <p>16c. Inside the extracted folder, open the .txt file, and at the top of the file add your first and last name. hit save and close the file</p>
+            <img class="post1format" src="./images/Step 16/16c.PNG">
+            <img class="post1format" src="./images/Step 16/16c1.PNG">
+            <p>16d. Now open the start menu, go to windows powershell, right click Powershell ISE, go to more, then click run as administrator, then click yes</p>
+            <img class="post1format" src="./images/Step 16/16d.png">
+            <p>16e. Open the powershell script you downloaded earlier</p>
+            <img class="post1format" src="./images/Step 16/16e.png">
+            <img class="post1format" src="./images/Step 16/16e1.png">
+            <p>**NOTE**This next step should never be done in a production environment. But for the purposes of this lab, we will be enabling the ability to run custom powershell scripts on this machine****</p>
+            <p>16f. In the console, type "Set-ExecutionPolicy Unrestricted", and hit enter, then select "yes to all"</p>
+            <img class="post1format" src="./images/Step 16/16f.png">
+            <img class="post1format" src="./images/Step 16/16f1.png">
+            <p>****This script will automatically create a new user org called "_USERS" then populate it with around a thousand users using the text file with random names in it. in addition to this, it will format the names into a naming convention similar to what you might normally seen in a real production environment****</p>
+            <br>
+            <p>*****Running the script*****</p>
+            <p>17. In powershell, browse to the directory with the script in it by typing the command "cd 'your directory here' it will be different for everyone. in my case I would be typing</p>
+            <p>"cd C:\users\a-lpinnock\desktop\AD_PS-master" followed by pressing enter. you will then see that your working directory has changed accordingly</p>
+            <img class="post1format" src="./images/Step 17/17.png">
+            <img class="post1format" src="./images/Step 17/171.png">
+            <p>17a. Once you've confirmed you're in the right directory, simply press play and select "run once"and let the script run. It may take a minute or two. you should see the console showing the creation of new users in real time</p>
+            <img class="post1format" src="./images/Step 17/17a.png">
+            <img class="post1format" src="./images/Step 17/17a1.png">
+            <p>17b. When the script is done, you should now be able to go into your server manager, and see that under your domain, you now have a new org called _USERS, and inside, all the names that were in the text file</p>
+            <img class="post1format" src="./images/Step 17/17b.png">
+            <br>
+            <p>*****Setting up windows 10 on the Virtual client PC *****</p>
+            <p>18. Go to Virtual box, and create a new machine, then enter the information as seen in the screenshot. then hit finish at the end</p>
+            <img class="post1format" src="./images/Step 18/18.png">
+            <img class="post1format" src="./images/Step 18/181.png">
+            <img class="post1format" src="./images/Step 18/182.png">
+            <img class="post1format" src="./images/Step 18/183.png">
+            <img class="post1format" src="./images/Step 18/184.png">
+            <p>18a. Right click on the client, and click settings</p>
+            <img class="post1format" src="./images/Step 18/18a.png">
+            <p>18b. Go to advanced, and choose bidirectional for shared clipboard and drag and drop</p>
+            <img class="post1format" src="./images/Step 18/18b.png">
+            <p>18c. Under network > adapter 1, select "Internal network" . this will allow the computer to be assigned addressing by our DHCP server set set up earlier</p>
+            <img class="post1format" src="./images/Step 18/18c.png">
+            <p>18d. Start the client machine you just configured, and when asked, mount the windows 10 iso you downloaded earlier, then click mount and retry</p>
+            <img class="post1format" src="./images/Step 18/18d.png">
+            <p>18e. Hit next, and install.</p>
+            <br>
+            <p>18f. Click " I don't have a Product Key", then select "Windows 10 pro". and hit next</p>
+            <img class="post1format" src="./images/Step 18/18f.png">
+            <img class="post1format" src="./images/Step 18/18f1.png">
+            <p>18g. Accept the license terms, hit next</p>
+            <img class="post1format" src="./images/Step 18/18g.png">
+            <p>18h. Select custom Install, and then click next. Then allow the computer to complete the setup and reset on its own, until you are at the Region Select screen</p>
+            <img class="post1format" src="./images/Step 18/18h.png">
+            <img class="post1format" src="./images/Step 18/18h1.png">
+            <p>18i. Choose your region, keyboard layout, then, skip, then select "I don't have internet"</p>
+            <img class="post1format" src="./images/Step 18/18i.png">
+            <img class="post1format" src="./images/Step 18/18i1.png">
+            <img class="post1format" src="./images/Step 18/18i2.png">
+            <img class="post1format" src="./images/Step 18/18i3.png">
+            <p>18j. Select " Continue with limited setup", then enter a user name. I will simply use the name "user". then Click next</p>
+            <img class="post1format" src="./images/Step 18/18j.png">
+            <img class="post1format" src="./images/Step 18/18j1.png">
+            <p>18k. Leave the password section blank, and click next</p>
+            <img class="post1format" src="./images/Step 18/18k.png">
+            <p>18L. Optional*** turn every option on this page off and hit accept.</p>
+            <img class="post1format" src="./images/Step 18/18l.png">
+            <p>18m. Click "not now"</p>
+            <img class="post1format" src="./images/Step 18/18m.png">
+            <br>
+            <p>19. On the Domain Controller VM (not the client VM) Open server manager > Tools > DHCP. Then in the menu, go to IPV4. right click on " server options"</p>
+            <img class="post1format" src="./images/Step 19/19.png">
+            <p>19a. Click "add router", then set the ip address to the address of the internal network interface "172.16.0.1". Click add, then click apply</p>
+            <img class="post1format" src="./images/Step 19/19a.png">
+            <p>19b. Right click the server, then go to all tasks > restart. This should give the host machine internet</p>
+            <img class="post1format" src="./images/Step 19/19b.png">
+            <p>19c. On the client machine open a command Prompt by searching "cmd" and clicking the app</p>
+            <img class="post1format" src="./images/Step 19/19c.png">
+            <p>19d. Type "ipconfig /renew" and hit enter. If everything was configured correctly, you should now have internet access on the client pc!</p>
+            <img class="post1format" src="./images/Step 19/19d.png">
+            <br>
+            <p>****joining the Client to the Domain + changing the host name****</p>
+            <p>20.On the client VM,  right click the start menu and go to system. Then scroll all the way down to Rename this PC (advanced)</p>
+            <img class="post1format" src="./images/Step 20/20.png">
+            <img class="post1format" src="./images/Step 20/201.png">
+            <p>20a. Click change, then name it CLIENT1, and in the domain group, put in the domain you created. In this case, mydomain.com, then click ok</p>
+            <img class="post1format" src="./images/Step 20/20a.png">
+            <img class="post1format" src="./images/Step 20/20a1.png">
+            <p>20b. Now, enter the username and password you created earlier. Essentially, any account you created on this domain should work, including your admin account, or regular access accounts generated from the shell script</p>
+            <br>
+            <p>20c. Allow the PC to restart when asked to</p>
+            <img class="post1format" src="./images/Step 20/20c.png">
+            <img class="post1format" src="./images/Step 20/20c1.png">
+            <p>20d. To confirm it all works, go back to your Server VM, open Server manager > Tools, DHCP, and under leases, you should see the Client PC we setup should have a created lease on the server</p>
+            <img class="post1format" src="./images/Step 20/20d.png">
+            <img class="post1format" src="./images/Step 20/20d1.png">
+            <p>you can also see that under administrative tools > active directory users and computers, under the computer section, you should see the Client machine that we just configured</p>
+            <br>
+            <br>
+            <p>Congratulations, you've created an Active Directory Server!!</p>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="post3" class="pendingpostformat">
+            <h2>Post 3</h2>
+            <h1 style="color: white;">Coming Soon!</h1>
+        </div>
+    </div>
+    <!--beginning of javscript-->
+    <script src="../../blog.js">
+    </script>
+    <!--End of JavaScript-->
+</body>
+</html>
