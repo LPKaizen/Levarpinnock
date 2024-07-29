@@ -45,7 +45,7 @@ function changeOne() {
     document.getElementById("url-links").style.visibility = "hidden";
     document.getElementById("url-links").style.display = "none";
 }
-
+/*
 function changeTwo() {
     document.getElementById("chhome").style.visibility = "hidden";
     document.getElementById("chhome").style.display = "none";
@@ -62,7 +62,7 @@ function changeTwo() {
     document.getElementById("url-links").style.visibility = "hidden";
     document.getElementById("url-links").style.display = "none";
 }
-
+*/
 function changeThree() {
     document.getElementById("chhome").style.visibility = "hidden";
     document.getElementById("chhome").style.display = "none";
