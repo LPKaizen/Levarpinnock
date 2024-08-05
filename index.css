@@ -379,10 +379,9 @@ thead {
     .TV {
         width: 80vw;
         height: 57vh;
-        margin-top: 29vh;
+        margin-top: 23vh;
         position: absolute;
         text-align: center;
-        
     }
 
     .btn {
@@ -495,7 +494,7 @@ thead {
         margin-top: 0;
         height: 350px;
     }
-
+    
     #back {
         font-size: 1.5rem;
     }
@@ -514,6 +513,13 @@ thead {
         width: 60vw;
         height: 45vh;
         border: coral 3px solid;
+    }
+
+    .url-format {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: whitesmoke;
+        font-size: 1.3rem;
     }
 
     .url-container {
