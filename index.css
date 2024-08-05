@@ -241,18 +241,7 @@ img {
     color: coral;
     transition: 200ms;
 }
-/**beginning of table stuff **/
 
-tr, td ,table {
-border: 3px solid coral;
-border-collapse: collapse;
-color: white;
-}
-
-td, tr {
-    padding: 5px;
-    font-size: 1.4rem;
-}
 
 thead {
     font-weight: bolder;
@@ -378,10 +367,11 @@ thead {
 
     .TV {
         width: 80vw;
-        height: 57vh;
+        height: 65vh;
         margin-top: 23vh;
         position: absolute;
         text-align: center;
+        border: none;
     }
 
     .btn {
@@ -405,6 +395,7 @@ thead {
 
     #chhome {
         overflow: scroll;
+        border: none;
     }
 
     .TVtext {
@@ -419,9 +410,9 @@ thead {
         width: inherit;
         height:inherit;
         text-align: center;
-        border: white solid 1px;
         overflow: scroll;
         overflow-x: hidden;
+        border: none;
     }
 
     #ch2 {
@@ -429,9 +420,14 @@ thead {
         width: inherit;
         height: inherit;
         text-align: center;
-        border: white solid 1px;
+        border: none;
         overflow: scroll;
         overflow-y: hidden;
+    }
+
+    #ch3 {
+        border: none;
+        overflow: scroll;
     }
 
     #title-ch3 {
@@ -528,6 +524,10 @@ thead {
         justify-content: center;
         flex-direction: column;
         
+    }
+
+    #url-links {
+        border: none;
     }
 }
 /** End of mobile Support **/
