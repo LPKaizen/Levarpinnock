@@ -22,13 +22,11 @@ a:visited {
 .navbar {
     text-align: center;
     Position: relative;
-    padding-top: 1.5em;
+    padding-top: 2.5em;
     height: 5em;
     min-width: 100%;
     width: auto;
-    background: rgba(0,0,100, 0.2);
-    border-bottom: 1px solid coral;
-    box-shadow: 0px 0px 12vh coral;
+
 }
 
 .btn {
@@ -125,7 +123,7 @@ img {
 .TV {
     width: 80vw;
     height:70vh;
-    margin-top: 20vh;
+    margin-top: 16vh;
     position: absolute;
     text-align: center;
 }
@@ -380,8 +378,8 @@ thead {
 
     .TV {
         width: 80vw;
-        height: 61vh;
-        margin-top: 30vh;
+        height: 65vh;
+        margin-top: 29vh;
         position: absolute;
         text-align: center;
         
@@ -389,7 +387,7 @@ thead {
 
     .btn {
         font-weight: 300;
-        font-size: 28px;
+        font-size: 27px;
         border-radius: 35px;
         margin-top: 5px;
         margin: 5px auto;
@@ -404,7 +402,6 @@ thead {
         flex-direction: column;
         padding: 0;
         text-align: center;
-        box-shadow: 0px 0px 6vh coral;
     }
 
     #chhome {
@@ -445,7 +442,7 @@ thead {
     }
 
     .header {
-        height: 93vh;
+        height: 100vh;
         margin: 0;
         padding: 0;
         display: flex;
@@ -478,16 +475,6 @@ thead {
         padding: 0;
     }
 
-    .selfie {
-        max-height: 55vh;
-        height: 53vh;
-        /*width: 5vw;
-        height: 60vh;*/
-        max-width: 200px;
-        margin: 0 auto;
-        border: coral 1px solid;
-    }
-
     .aboutme {
         display: none;
     }
@@ -513,14 +500,7 @@ thead {
         font-size: 1.5rem;
     }
 
-    tr, td ,table {
-        border: 1px solid coral;
-        }
-        
-    td, tr {
-        font-size: 11pt;
-    }
-        
+
     thead {
         font-weight: bold;
     }

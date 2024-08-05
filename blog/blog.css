@@ -65,10 +65,6 @@ a:link {
     justify-content: center;
 }
 
-h2 {
-    color: #14da3f;
-}
-
 p {
     line-height: 1.6;
     color: seashell;
@@ -79,12 +75,12 @@ p {
     
 }
 
-
 .postformat {
     background-color: rgb(24, 24, 68);
     width: 1024px;
     text-align: center;
 }
+
 p .menubutton {
     font-size: 24px; 
     color: rgb(224, 208, 196);
