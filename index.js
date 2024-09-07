@@ -36,8 +36,6 @@ function changeOne() {
     document.getElementById("ch1").style.visibility = "visible";
     document.getElementById("ch1").style.display = "block";
 
-    document.getElementById("ch2").style.visibility = "hidden";
-    document.getElementById("ch2").style.display = "none";
 
     document.getElementById("ch3").style.visibility = "hidden";
     document.getElementById("ch3").style.display = "none";
@@ -45,24 +43,8 @@ function changeOne() {
     document.getElementById("url-links").style.visibility = "hidden";
     document.getElementById("url-links").style.display = "none";
 }
-/*
-function changeTwo() {
-    document.getElementById("chhome").style.visibility = "hidden";
-    document.getElementById("chhome").style.display = "none";
 
-    document.getElementById("ch1").style.visibility = "hidden";
-    document.getElementById("ch1").style.display = "none";
 
-    document.getElementById("ch2").style.visibility = "visible";
-    document.getElementById("ch2").style.display = "block";
-
-    document.getElementById("ch3").style.visibility = "hidden";
-    document.getElementById("ch3").style.display = "none";
-
-    document.getElementById("url-links").style.visibility = "hidden";
-    document.getElementById("url-links").style.display = "none";
-}
-*/
 function changeThree() {
     document.getElementById("chhome").style.visibility = "hidden";
     document.getElementById("chhome").style.display = "none";
@@ -70,8 +52,7 @@ function changeThree() {
     document.getElementById("ch1").style.visibility = "hidden";
     document.getElementById("ch1").style.display = "none";
 
-    document.getElementById("ch2").style.visibility = "hidden";
-    document.getElementById("ch2").style.display = "none";
+  
 
     document.getElementById("url-links").style.visibility = "visible";
     document.getElementById("url-links").style.display = "block";

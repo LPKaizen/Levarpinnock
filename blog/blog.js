@@ -1,19 +1,18 @@
-
 function menuToggle() {
-    if(document.getElementById("slides").style.left == "-520vw")
+    if(document.getElementById("slides").style.left === "-520vw")
     {
     document.getElementById("slides").style.left = "0vw";
-    }
-    else 
-    {
+    } else {
     document.getElementById("slides").style.left = "-520vw";
     }
 }
 
 function menuClose() {
-    if(document.getElementById("slides").style.left == "0vw")
-    {
+    if(document.getElementById("slides").style.left === "0vw") {
     document.getElementById("slides").style.left = "-520vw";
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() { 
+document.querySelector('span.menubutton').onclick = menuToggle;
+});

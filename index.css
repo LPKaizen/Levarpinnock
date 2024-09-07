@@ -3,7 +3,6 @@ html {
     overflow-x: hidden;
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -113,7 +112,6 @@ img {
     padding-right: 2.5em;
 }
 
-
 .footertext {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 3em;
@@ -153,7 +151,6 @@ img {
     height:inherit;
     text-align: center;
     border: white solid 1px;
-/** overflow: scroll; **/
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -166,7 +163,6 @@ img {
     margin: auto 0;
     padding-top: 0.5rem;
 }
-
 
 .selfie {
     width: 22vw;
@@ -192,59 +188,10 @@ img {
 }
 
 
-.nextcircle {
-    color: #fff;
-    margin: 2.5em 1em;
-    padding: 10px 18px;
-    text-decoration: none;
-    border: 1px solid coral;
-    font-weight: 500;
-    font-size: 38px;
-    border-radius: 50%;
-    
-}
-
-.nextcircle:hover {
-    background: coral;
-    color: black;
-    transition: 200ms;
-}
-
 .TVtext {
     color: white;
     font-size: 1.5rem;
     font-weight: 300;
-}
-
-/**beginning of channel two code**/
-#ch2 {
-    visibility: hidden;
-    width: inherit;
-    height: inherit;
-    text-align: center;
-    border: white solid 1px;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.comingsoon {
-    padding-top: 25vh;
-}
-
-.comingsoonlink {
-    font-size: 60px;
-    color: white;
-}
-
-.comingsoonlink:hover {
-    color: coral;
-    transition: 200ms;
-}
-
-
-thead {
-    font-weight: bolder;
 }
 
 /**beginning of channel Three code**/
@@ -276,7 +223,7 @@ thead {
     justify-content: center;
 }
 
-.slide img{
+.slide img {
     width: 100%;
     height: 100%;
     position: relative;
@@ -289,12 +236,11 @@ thead {
     transition: 0.6s;
 }
 
-
- .slide {
+.slide {
     top: 0%;
     position: relative;
     width: 100%;
- }
+}
 
  .picnav {
     position: absolute;
@@ -303,7 +249,7 @@ thead {
     display: flex;
  }
 
-.bar{
+.bar {
     width: 50px;
     height: 10px;
     border: black 2px solid;
@@ -312,7 +258,6 @@ thead {
     transition: 0.4s;
 }
 
-
 #back {
     width: fit-content;
     height: fit-content;
@@ -320,8 +265,6 @@ thead {
     color: white;
     font-size: 2.5rem;
 }
-
-
 
 #url-links {
     visibility: hidden;
@@ -413,16 +356,6 @@ thead {
         overflow: scroll;
         overflow-x: hidden;
         border: none;
-    }
-
-    #ch2 {
-        visibility: hidden;
-        width: inherit;
-        height: inherit;
-        text-align: center;
-        border: none;
-        overflow: scroll;
-        overflow-y: hidden;
     }
 
     #ch3 {
