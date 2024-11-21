@@ -52,6 +52,10 @@ a:visited {
 
 }
 
+ul {
+    list-style-type: disc;
+}
+
 .btn {
     color: #fff;
     margin: 2.5em 1em;
@@ -179,43 +183,61 @@ img {
     overflow-y: hidden;
 }
 
-.aboutmeflex{
+.outer-container {
+    width: 80vw;
+    height: 70vh;
+    
+    position: absolute;
+    text-align: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
-    margin: auto 0;
-    padding-top: 0.5rem;
+    align-items: center;
 }
 
-.selfie {
-    width: 22vw;
-    height:60vh;
-    min-width: 360px;
-    margin-right: 10vw;
-    border: coral 5px solid;
-}
-
-.mobileaboutme {
-    display: none;
-}
-
-img {
+.about-section {
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 10px;
     position: relative;
 }
 
-.aboutme {
-    width: 70vw;
-    height: 60vh;
+.tile {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, background-color 0.3s, z-index 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
 }
 
+.tile:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+}
 
-.TVtext {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 300;
+.tile h2 {
+    font-size: 1.5em;
+    color: whitesmoke;
+}
+
+.tile li {
+    color: whitesmoke ;
+    font-size: 1.1rem;
+}
+.detail {
+    font-size: 1em;
+    color: whitesmoke;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 /**beginning of channel Three code**/
@@ -325,6 +347,8 @@ img {
     
 }
 
+
+
 /**Beginning of mobile support  **/
 
 @media only screen and (max-width: 1210px){
@@ -333,8 +357,8 @@ img {
     }
 
     .TV {
-        width: 80vw;
-        height: 65vh;
+        width: 100vw;
+        height: 75vh;
         margin-top: 23vh;
         position: absolute;
         text-align: center;
@@ -371,7 +395,7 @@ img {
     .TVbigtext {
         font-size: 4em;
     }
-
+/* beginning of ch1 mobile code*/
     #ch1 {
         visibility: hidden;
         width: inherit;
@@ -381,6 +405,47 @@ img {
         overflow-x: hidden;
         border: none;
     }
+
+    .outer-container {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about-section {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        padding: 5px;
+        position: relative;
+    }
+    
+    .detail {
+        font-size: 1em;
+        color: whitesmoke;
+        margin-top: 10px;
+    }
+    
+    .tile {
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        transition: transform 0.3s, background-color 0.3s, z-index 0.3s;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 1;
+        overflow: scroll;
+    }
+
+    
+    /* beginning of mobile channel 3 code */
 
     #ch3 {
         border: none;

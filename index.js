@@ -12,6 +12,13 @@ overlay.addEventListener('transitionend', function() {
 });
 });
 
+
+function showDetails(index) {
+    const details = document.querySelectorAll('.detail');
+    details[index].classList.toggle('hidden');
+}
+
+
 //show and hide div elements on click
 
 function SlideShow() {
