@@ -67,6 +67,9 @@ ul {
     border-radius: 35px;
 }
 
+.hover li {
+    color: white;
+}
 .btn:hover {
     background: coral;
     color: black;

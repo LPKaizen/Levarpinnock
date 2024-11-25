@@ -8,6 +8,7 @@
     z-index: 9999;
     opacity: 1;
     transition: opacity 1s ease-out;
+    object-fit: cover;
 }
   
 body.fade-in {
@@ -93,14 +94,15 @@ a:visited {
 }
 
 .video-background{
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; 
+    z-index: -1;
+    object-fit: cover;
 }
 
 .footer-container {
@@ -156,7 +158,6 @@ img {
    text-align: center;
    overflow-y: hidden;
    overflow-x: hidden;
-   
 }
 .hover:hover {
     color:coral;
