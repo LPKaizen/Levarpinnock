@@ -10,40 +10,103 @@
 
     <!--Beginning of body-->
     <body id="header">
-    <div class="overlay"></div>
-    
-        <!--Navagation Bar-->
-        <section class="header">
-            <nav class="navbar">
-                <a class="btn" onclick="changeOne()">About Me</a>
-                <a class="btn" href="./blog/index.html">Blog Posts</a>
-                <a class="btn" onclick="changeThree()" class="demos">Portfolio</a>
-                <a href="#footer" class="btn" class="contactb">Contact</a>
-            </nav>
+        <div class="overlay"></div>
+        
+            <div class="header">
+                <!--Navagation Bar-->
+                <nav class="navbar">
+                    <a class="btn" onclick="changeOne()">About Me</a>
+                    <a class="btn" href="./blog/index.html">Blog Posts</a>
+                    <a class="btn" onclick="changeThree()" class="demos">Projects</a>
+                    <a href="#footer" class="btn" class="contactb">Contact</a>
+                </nav>
 
-            <!--Beginning of main section-->
-            <video class="video-background" autoplay loop muted plays-inline>
-                <source src="media/videos/space.mp4">
-            </video>
+                <!--Beginning of main section-->
+                <video class="video-background" autoplay loop muted plays-inline>
+                    <source src="media/videos/space.mp4">
+                </video>
 
-            <!--BEGINNING OF "TV"-->
-            <div class="TV">
+                <!--BEGINNING OF "TV"-->
+                <div class="TV">
 
-                <!--Main Channel-->
-                <div id="chhome">
-                    <a class="TVbigtext"> Hi</a>
-                    <br><br><br>
-                    <a class="TVtext" style="line-height: 1.0;font-size: 2rem; color: white;">Welcome to my Portfolio!<br><br>Feel free to browse the menu options above to learn more about me, or see some projects i've worked on :)</a>
-                </div>
+                    <!--Main Channel-->
+                    <div id="chhome">
+                        <a class="TVbigtext"> Hi</a>
+                        <br><br><br>
+                        <a class="TVtext" style="line-height: 1.0;font-size: 2rem; color: white;">Welcome to my Portfolio<br><br><br>Browse the menu options to learn more about me, and see what I've been working on!</a>
+                    </div>
 
-                <!--Channel 1: About Me-->
-                <div id="ch1" style="display: none;">
-                    <div class="outer-container">
-                        <div class="about-section">
-                            <div class="tile">
-                                <h2>🛠️ Technical Expertise</h2>
-                                <br>
-                                <br>
+                    <!--Channel 1: About Me-->
+                    <div id="ch1" style="display: none;">
+                        <div class="outer-container">
+                            <div class="about-section">
+                                <div class="tile">
+                                    <h2>🛠️ Technical Skills</h2>
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>Proficient in cybersecurity tools and frameworks, including Snort, Zeek, Wazuh, and Wireshark for network monitoring and intrusion detection</li>
+                                        <br>
+                                        <li>Experienced with virtualization platforms such as VirtualBox and VMware, and adept in configuring and managing Windows Server 2019</li>
+                                        <br>
+                                        <li>Skilled in scripting and automation using PowerShell, with applications in Active Directory and SIEM setups</li>
+                                        <br>
+                                        <li>Strong foundational knowledge of web development, with hands-on experience building websites from scratch (HTML/CSS/Javascript)</li>
+                                    </ul>
+                                </div>
+                                <div class="tile">
+                                    <h2>💼 Professional Experience</h2>
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>Conducted beta testing for pre-release software and hardware, identifying bugs and enhancing product performance in various roles</li>
+                                        <br>
+                                        <li>Delivered technical training and live demonstrations to diverse audiences, bridging technical and non-technical expertise</li>
+                                        <br>
+                                        <li>Installed, maintained, and audited IT infrastructure, including IoT devices, routers, and demo hardware across retail and enterprise environments</li>
+                                        <br>
+                                        <li>Managed and optimized data reporting processes, including sales analytics, market activity insights, and audit compliance tracking</li>    
+                                    </ul>
+                                </div>
+                                <div class="tile">
+                                    <h2>🎓 Education and Certifications</h2>
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>Advanced Diploma in Computer Systems Technology - Systems Analyst, from Sheridan College</li>
+                                        <br>
+                                        <li>Security+ certified by CompTIA (SY0-701), validating knowledge in network security, risk management, and incident response</li>
+                                        <br>
+                                        <li>Certified in Practical Windows Forensics by TCM Security, demonstrating expertise in system investigation and evidence collection</li>
+                                        <br>
+                                        <li>Web Development Certification from Codecademy, showcasing a foundation in web technologies and design principles</li>    
+                                    </ul>
+                                </div>
+                                <div class="tile">
+                                    <h2>💻 Projects and Practical Applications</h2>
+                                    <br>
+                                    <br>
+                                    <ul>
+                                        <li>Designed and deployed a virtual Active Directory network using Windows Server 2019 and PowerShell scripting to simulate enterprise environments</li>
+                                        <br>
+                                        <li>Configured a SIEM solution in Azure using Microsoft Sentinel, enabling custom log collection from a honeypot with live geolocation mapping</li>
+                                        <br>
+                                        <li>Integrated network analysis tools like TCPDump and NetworkMiner to analyze and enhance system security in virtual environments</li>
+                                        <br>
+                                        <li>Applied forensic techniques using tools such as Velociraptor, Autopsy, and Volatility3 for system integrity analysis and incident response</li>    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-container">
+                            <div class="tabs">
+                                <div class="tab active" data-tab="technical">🛠️ Technical Skills</div>
+                                <div class="tab" data-tab="experience">💼 Experience</div>
+                                <div class="tab" data-tab="projects">💻 Projects</div>
+                                <div class="tab" data-tab="education">🎓 Education</div>
+                            </div>
+                            <div class="content active" id="technical">
                                 <ul>
                                     <li>Proficient in cybersecurity tools and frameworks, including Snort, Zeek, Wazuh, and Wireshark for network monitoring and intrusion detection</li>
                                     <br>
@@ -54,10 +117,7 @@
                                     <li>Strong foundational knowledge of web development, with hands-on experience building websites from scratch (HTML/CSS/Javascript)</li>
                                 </ul>
                             </div>
-                            <div class="tile">
-                                <h2>💼 Professional Experience</h2>
-                                <br>
-                                <br>
+                            <div class="content" id="experience">
                                 <ul>
                                     <li>Conducted beta testing for pre-release software and hardware, identifying bugs and enhancing product performance in various roles</li>
                                     <br>
@@ -65,27 +125,10 @@
                                     <br>
                                     <li>Installed, maintained, and audited IT infrastructure, including IoT devices, routers, and demo hardware across retail and enterprise environments</li>
                                     <br>
-                                    <li>Managed and optimized data reporting processes, including sales analytics, market activity insights, and audit compliance tracking</li>    
+                                    <li>Managed and optimized data reporting processes, including sales analytics, market activity insights, and audit compliance tracking</li>
                                 </ul>
                             </div>
-                            <div class="tile">
-                                <h2>🎓 Education and Certifications</h2>
-                                <br>
-                                <br>
-                                <ul>
-                                    <li>Advanced Diploma in Computer Systems Technology - Systems Analyst, from Sheridan College</li>
-                                    <br>
-                                    <li>Security+ certified by CompTIA (SY0-701), validating knowledge in network security, risk management, and incident response</li>
-                                    <br>
-                                    <li>Certified in Practical Windows Forensics by TCM Security, demonstrating expertise in system investigation and evidence collection</li>
-                                    <br>
-                                    <li>Web Development Certification from Codecademy, showcasing a foundation in web technologies and design principles</li>    
-                                </ul>
-                            </div>
-                            <div class="tile">
-                                <h2>💻 Projects and Practical Applications</h2>
-                                <br>
-                                <br>
+                            <div class="content" id="projects">
                                 <ul>
                                     <li>Designed and deployed a virtual Active Directory network using Windows Server 2019 and PowerShell scripting to simulate enterprise environments</li>
                                     <br>
@@ -93,55 +136,63 @@
                                     <br>
                                     <li>Integrated network analysis tools like TCPDump and NetworkMiner to analyze and enhance system security in virtual environments</li>
                                     <br>
-                                    <li>Applied forensic techniques using tools such as Velociraptor, Autopsy, and Volatility3 for system integrity analysis and incident response</li>    
+                                    <li>Applied forensic techniques using tools such as Velociraptor, Autopsy, and Volatility3 for system integrity analysis and incident response</li>
                                 </ul>
+                            </div>
+                            <div class="content" id="education">
+                                <ul>
+                                    <li>Advanced Diploma in Computer Systems Technology - Systems Analyst, from Sheridan College</li>
+                                    <br>
+                                    <li>Security+ certified by CompTIA (SY0-701), validating knowledge in network security, risk management, and incident response</li>
+                                    <br>
+                                    <li>Certified in Practical Windows Forensics by TCM Security, demonstrating expertise in system investigation and evidence collection</li>
+                                    <br>
+                                    <li>Web Development Certification from Codecademy, showcasing a foundation in web technologies and design principles</li>
+                                </ul>
+                            </div>
+                        </div>                    
+                    </div>
+
+                    <!--Channel 3: Projects(formally Tech Demos)-->
+                <div id="ch3" style="display: none;">
+                    <br>
+                    <a id="title-ch3">Computers I've built</a>
+                    <br>
+                    <a style="color: white">(Tap Picture to see more)</a>
+                    <br><br>
+                    <div onclick="SlideShow()" class="computers">
+                        <div id="slides">
+                            <div class="slide">
+                                <img src="./media/images/other/pc1.jpg">
+                            </div>
+                            <div class="slide">
+                                <img src="./media/images/other/pc2.jpg">
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!--Channel 3: Projects(formally Tech Demos)-->
-            <div id="ch3" style="display: none;">
-                <br>
-                <a id="title-ch3">Computers I've built</a>
-                <br>
-                <a style="color: white">(Tap Picture to see more)</a>
-                <br><br>
-                <div onclick="SlideShow()" class="computers">
-                    <div id="slides">
-                        <div class="slide">
-                            <img src="./media/images/other/pc1.jpg">
-                        </div>
-                        <div class="slide">
-                            <img src="./media/images/other/pc2.jpg">
-                        </div>
+                        <br>
+                        <ul class="TVtext">
+                            <li onclick="UrlLinks()" class="hover">Go Back</li>
+                        </ul>
                     </div>
-                </div>
-                    <br>
-                    <ul class="TVtext">
-                        <li onclick="UrlLinks()" class="hover">Go Back</li>
-                    </ul>
-                </div>
-                 <!--Channel 3-b: URL Links-->
-                <div id="url-links" class="TVtext">
-                    <div class="url-container">
-                        <br><br>
-                        <a style="font-size:46pt;color: coral;padding-bottom: 10px;">Projects</a>
-                        <a class="url-format" href="https://lpkaizen.github.io/excursion/" target="_blank">Excursion</a>
-                        <a class="url-format" href="https://lpkaizen.github.io/Teacozy/" target="_blank">Tea Cozy</a>
-                        <a class="url-format" href="https://lpkaizen.github.io/secretagentsupply/" target="_blank">Secret Agent Supply</a>
-                        <a class="url-format" href="https://lpkaizen.github.io/Tortoiseshell-Optics/" target="_blank">Tortoiseshell Optics</a>
-                        <a>________________</a>
-                        <a onclick="UrlLinks2()" class="goback">Click here to view some computers I've built</a>
+                    <!--Channel 3-b: URL Links-->
+                    <div id="url-links" class="TVtext">
+                        <div class="url-container">
+                            <br><br>
+                            <a style="font-size:46pt;color: coral;padding-bottom: 10px;">Projects</a>
+                            <a class="url-format" href="https://lpkaizen.github.io/excursion/" target="_blank">Excursion</a>
+                            <a class="url-format" href="https://lpkaizen.github.io/Teacozy/" target="_blank">Tea Cozy</a>
+                            <a class="url-format" href="https://lpkaizen.github.io/secretagentsupply/" target="_blank">Secret Agent Supply</a>
+                            <a class="url-format" href="https://lpkaizen.github.io/Tortoiseshell-Optics/" target="_blank">Tortoiseshell Optics</a>
+                            <a>________________</a>
+                            <a onclick="UrlLinks2()" class="goback">Click here to view some computers I've built</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!--beginning of javscript-->
-    <script src="./index.js"></script>
-    <!--End of JavaScript-->
-
+            <!--beginning of javscript-->
+        <script src="./index.js"></script>
+        <!--End of JavaScript-->
     </body>
 
     <!--Beginning of footer-->
@@ -166,6 +217,7 @@
                 <a>647.916.4205</a>
                 <a>|</a>
                 <a>Toronto, Ontario</a>
+                
             </div>
         </div>
     </footer>

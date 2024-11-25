@@ -94,23 +94,25 @@ ul {
 
 
 .header {
-    height:100vh;
+    min-height:100vh;
     background: rgba(0,0,100, 0.4);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .video-background{
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; 
+    z-index: -1;
+    object-fit: cover; 
 }
 
 .footer-container {
@@ -120,6 +122,8 @@ ul {
     background: coral;
     text-align: center;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .footericons {
@@ -183,10 +187,13 @@ img {
     overflow-y: hidden;
 }
 
+.mobile-container{
+    display: none;
+}
+
 .outer-container {
     width: 80vw;
     height: 70vh;
-    
     position: absolute;
     text-align: center;
     display: flex;
@@ -214,6 +221,7 @@ img {
     overflow: hidden;
     cursor: pointer;
     z-index: 1;
+    min-width: 570px;
 }
 
 .tile:hover {
@@ -228,7 +236,7 @@ img {
 
 .tile li {
     color: whitesmoke ;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 .detail {
     font-size: 1em;
@@ -351,14 +359,15 @@ img {
 
 /**Beginning of mobile support  **/
 
-@media only screen and (max-width: 1210px){
+@media only screen and (max-width: 1500px){
     .html {
         overflow-x: hidden;
     }
 
     .TV {
         width: 100vw;
-        height: 75vh;
+        height: auto;
+        min-height: 75vw;
         margin-top: 23vh;
         position: absolute;
         text-align: center;
@@ -373,7 +382,8 @@ img {
         margin: 5px auto;
         padding: 0;
         width: 50vw;
-        height: max-content;
+        min-height: 32px;
+        
     }
 
     .navbar {
@@ -407,42 +417,46 @@ img {
     }
 
     .outer-container {
-        width: inherit;
-        height: inherit;
-        position: absolute;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: none;
     }
-    
-    .about-section {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 5px;
-        padding: 5px;
-        position: relative;
-    }
-    
-    .detail {
-        font-size: 1em;
-        color: whitesmoke;
-        margin-top: 10px;
-    }
-    
-    .tile {
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 5px;
-        transition: transform 0.3s, background-color 0.3s, z-index 0.3s;
-        position: relative;
+  
+    .mobile-container {
+        display: block;
+        max-width: 700px;
+        margin: 20px auto;
+        background: rgba(192, 192, 192, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         overflow: hidden;
-        cursor: pointer;
-        z-index: 1;
-        overflow: scroll;
     }
+    
+    .tabs {
+        display: flex;
+        background: coral;
+    }
+    
+    .tab {
+        flex: 1;
+        padding: 10px 0;
+        text-align: center;
+        color: whitesmoke;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .tab.active {
+        background: #005BB5;
+    }
+    
+    .content {
+        padding: 20px;
+        display: none;
+    }
+    
+    .content.active {
+        display: block;
+    }
+    
 
     
     /* beginning of mobile channel 3 code */

@@ -1,3 +1,20 @@
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.content');
+
+//mobile about me section code//
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked tab and content
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+});
+
+
 //animation code//
 window.addEventListener("load", function() {
     const overlay = document.querySelector('.overlay');
