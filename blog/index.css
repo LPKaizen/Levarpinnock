@@ -141,7 +141,7 @@ img {
 
 .TV {
     width: 60vw;
-    height: 40vh;
+    height: 60vh;
     margin-top: 25vh;
     position: absolute;
     text-align: center;
@@ -156,7 +156,7 @@ img {
    height: inherit;
    position: absolute;
    text-align: center;
-   overflow-y: hidden;
+   overflow-y: auto;
    overflow-x: hidden;
 }
 .hover:hover {
@@ -193,10 +193,6 @@ img {
     overflow-y: hidden;
 }
 
-
-
-
-
 /**Beginning of mobile support  **/
 
 @media only screen and (max-width: 1210px){
@@ -207,7 +203,7 @@ img {
     .TV {
         width: 80vw;
         height: 61vh;
-        margin-top: 30vh;
+        margin-top: 15vh;
         position: absolute;
         text-align: center;
         

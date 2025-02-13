@@ -84,6 +84,7 @@ ul {
 }
 
 .goback{
+    visibility: hidden;
     font-size:15pt;
     color:darkgrey;
     padding-top: 20px;
