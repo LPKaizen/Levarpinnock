@@ -28,8 +28,8 @@ header {
 nav {
     background-color: #f4f4f4;
     padding: 10px;
-    width: 85vw;
-    height: 100vh;
+    width: 30vw;
+    height: 20vh;
     overflow-y: auto;
     position: fixed;
     left: -520vw;
@@ -152,7 +152,11 @@ code {
         max-width: 650px;
         text-align: center;
     }
-    
+    nav {
+        width: 80vw;
+        height: 15vh;
+    }
+
     p .menubutton {
         font-size: 16px; 
     }
